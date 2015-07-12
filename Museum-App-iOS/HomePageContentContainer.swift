@@ -10,10 +10,10 @@ import UIKit
 
 class HomePageContentContainer: UIViewController {
     
-    var imageview: UIImageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
-    override func viewDidLoad() {
+    @IBOutlet weak var BackgroundImage: UIImageView!
+   override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(imageview)
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
         // Do any additional setup after loading the view.
     }
     

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6301B529B8900701D27 /* FMDatabase.m */; };
+		3236E63B1B529B8900701D27 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6321B529B8900701D27 /* FMDatabaseAdditions.m */; };
+		3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6341B529B8900701D27 /* FMDatabasePool.m */; };
+		3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6361B529B8900701D27 /* FMDatabaseQueue.m */; };
+		3236E63E1B529B8900701D27 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6391B529B8900701D27 /* FMResultSet.m */; };
+		3236E6401B529D2F00701D27 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3236E63F1B529D2F00701D27 /* libsqlite3.0.dylib */; };
+		3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6411B529E3000701D27 /* DatabaseLoader.swift */; };
+		3236E6441B529EBD00701D27 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6431B529EBD00701D27 /* FMDatabaseVariadic.swift */; };
+		3236E64D1B52A27B00701D27 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 3236E6481B52A27B00701D27 /* images */; };
+		3236E64E1B52A27B00701D27 /* merge12547865245154.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3236E6491B52A27B00701D27 /* merge12547865245154.txt */; };
+		3236E64F1B52A27B00701D27 /* Museum Images in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64A1B52A27B00701D27 /* Museum Images */; };
+		3236E6501B52A27B00701D27 /* museumDB in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64B1B52A27B00701D27 /* museumDB */; };
+		3236E6511B52A27B00701D27 /* webpages in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64C1B52A27B00701D27 /* webpages */; };
 		32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C691B52727C00BC4ADC /* AppDelegate.swift */; };
 		32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C6B1B52727C00BC4ADC /* ViewController.swift */; };
 		32512C6F1B52727C00BC4ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32512C6D1B52727C00BC4ADC /* Main.storyboard */; };
@@ -30,6 +43,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Museum-App-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		3236E62F1B529B8900701D27 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3236E6301B529B8900701D27 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3236E6311B529B8900701D27 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3236E6321B529B8900701D27 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3236E6331B529B8900701D27 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3236E6341B529B8900701D27 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3236E6351B529B8900701D27 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3236E6361B529B8900701D27 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3236E6371B529B8900701D27 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		3236E6381B529B8900701D27 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3236E6391B529B8900701D27 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3236E63F1B529D2F00701D27 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		3236E6411B529E3000701D27 /* DatabaseLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseLoader.swift; sourceTree = "<group>"; };
+		3236E6431B529EBD00701D27 /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		3236E6481B52A27B00701D27 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		3236E6491B52A27B00701D27 /* merge12547865245154.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = merge12547865245154.txt; sourceTree = "<group>"; };
+		3236E64A1B52A27B00701D27 /* Museum Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Museum Images"; sourceTree = "<group>"; };
+		3236E64B1B52A27B00701D27 /* museumDB */ = {isa = PBXFileReference; lastKnownFileType = file; path = museumDB; sourceTree = "<group>"; };
+		3236E64C1B52A27B00701D27 /* webpages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = webpages; sourceTree = "<group>"; };
 		32512C641B52727C00BC4ADC /* Museum-App-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Museum-App-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32512C681B52727C00BC4ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32512C691B52727C00BC4ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3236E6401B529D2F00701D27 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,9 +98,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3236E6451B52A1D500701D27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3236E6481B52A27B00701D27 /* images */,
+				3236E6491B52A27B00701D27 /* merge12547865245154.txt */,
+				3236E64A1B52A27B00701D27 /* Museum Images */,
+				3236E64B1B52A27B00701D27 /* museumDB */,
+				3236E64C1B52A27B00701D27 /* webpages */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3236E6471B52A1FD00701D27 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				3236E6431B529EBD00701D27 /* FMDatabaseVariadic.swift */,
+				3236E62F1B529B8900701D27 /* FMDatabase.h */,
+				3236E6301B529B8900701D27 /* FMDatabase.m */,
+				3236E6311B529B8900701D27 /* FMDatabaseAdditions.h */,
+				3236E6321B529B8900701D27 /* FMDatabaseAdditions.m */,
+				3236E6331B529B8900701D27 /* FMDatabasePool.h */,
+				3236E6341B529B8900701D27 /* FMDatabasePool.m */,
+				3236E6351B529B8900701D27 /* FMDatabaseQueue.h */,
+				3236E6361B529B8900701D27 /* FMDatabaseQueue.m */,
+				3236E6371B529B8900701D27 /* FMDB.h */,
+				3236E6381B529B8900701D27 /* FMResultSet.h */,
+				3236E6391B529B8900701D27 /* FMResultSet.m */,
+				32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */,
+			);
+			name = FMDB;
+			sourceTree = "<group>";
+		};
 		32512C5B1B52727C00BC4ADC = {
 			isa = PBXGroup;
 			children = (
+				3236E63F1B529D2F00701D27 /* libsqlite3.0.dylib */,
 				32512C661B52727C00BC4ADC /* Museum-App-iOS */,
 				32512C7C1B52727D00BC4ADC /* Museum-App-iOSTests */,
 				32512C651B52727C00BC4ADC /* Products */,
@@ -85,6 +152,7 @@
 		32512C661B52727C00BC4ADC /* Museum-App-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3236E6471B52A1FD00701D27 /* FMDB */,
 				32512C691B52727C00BC4ADC /* AppDelegate.swift */,
 				32512C6B1B52727C00BC4ADC /* ViewController.swift */,
 				32512C6D1B52727C00BC4ADC /* Main.storyboard */,
@@ -94,7 +162,9 @@
 				32512C891B52733000BC4ADC /* BottomButtonContainer.swift */,
 				32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */,
 				32512C8D1B52738800BC4ADC /* HomeViewController.swift */,
-				32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */,
+				3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */,
+				3236E6411B529E3000701D27 /* DatabaseLoader.swift */,
+				3236E6451B52A1D500701D27 /* Resources */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -204,8 +274,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3236E64E1B52A27B00701D27 /* merge12547865245154.txt in Resources */,
+				3236E64F1B52A27B00701D27 /* Museum Images in Resources */,
+				3236E64D1B52A27B00701D27 /* images in Resources */,
 				32512C6F1B52727C00BC4ADC /* Main.storyboard in Resources */,
+				3236E6501B52A27B00701D27 /* museumDB in Resources */,
 				32512C741B52727C00BC4ADC /* LaunchScreen.xib in Resources */,
+				3236E6511B52A27B00701D27 /* webpages in Resources */,
 				32512C711B52727C00BC4ADC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,11 +300,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */,
+				3236E6441B529EBD00701D27 /* FMDatabaseVariadic.swift in Sources */,
 				32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */,
 				32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */,
+				3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */,
+				3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */,
+				3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */,
+				3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */,
 				32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */,
 				32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */,
+				3236E63E1B529B8900701D27 /* FMResultSet.m in Sources */,
 				32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */,
+				3236E63B1B529B8900701D27 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +438,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Museum-App-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Museum-App-iOS/Museum-App-iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -366,9 +452,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Museum-App-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Museum-App-iOS/Museum-App-iOS-Bridging-Header.h";
 			};
 			name = Release;
 		};

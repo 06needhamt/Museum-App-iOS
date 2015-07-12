@@ -13,6 +13,8 @@ public class BottomButtonContainer : UIViewController  {
     var BottomButtons: [UIButton] = [UIButton]();
     var parent: HomeViewController?
     let NUM_BUTTONS:CGFloat = 5
+    let BottomButtonNamesBlue:[String] = ["Trail Icon Blue", "Explorer Trail Icon Blue", "QR Icon Blue", "Map Icon Blue", "Information Icon Blue"]
+    let BottomButtonNamesGreen:[String] = ["Trail Icon Green", "Explorer Trail Icon Green", "QR Icon Green", "Map Icon Green", "Information Icon Green"]
     
     required public init(coder aDecoder: NSCoder) {
         //parent = HomeViewController(coder: aDecoder)
@@ -37,21 +39,22 @@ public class BottomButtonContainer : UIViewController  {
     
     private func CreateButton(index:CGFloat) -> UIButton{
         let Viewwidth: CGFloat = self.view.bounds.width
-        let Viewheight: CGFloat = self.view.bounds.height
-        
+        let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 8)
+        let i:Int = Int(index);
         var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight))
-        if(index % 2 == 0){
-            button.backgroundColor = UIColor.blueColor()
+        let image:UIImage? = UIImage(named: BottomButtonNamesBlue[i])
+        if(image == nil){
+            NSLog("Image is NIL")
         }
-        else
-        {
-            button.backgroundColor = UIColor.whiteColor()
+        else{
+            NSLog("Image Loaded %@", BottomButtonNamesBlue[i])
         }
+        button.setBackgroundImage(image, forState: UIControlState.Normal)
         button.addTarget(self, action:"ButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
         BottomButtons.append(button);
         return button
     }
-    private func ButtonClicked(sender: UIButton){
+    func ButtonClicked(sender: UIButton){
         for var i:Int = 0; i < BottomButtons.count; i++
         {
             if(BottomButtons[i] == sender){
@@ -64,14 +67,20 @@ public class BottomButtonContainer : UIViewController  {
                 case 2:
                     break
                 case 3:
+                    parent = getParent() as? HomeViewController
+                    if(parent == nil){
+                        NSLog("Parent is NIL")
+                    }
                     parent!.TopButtonsController!.LoadMapButtons();
+                    parent!.TopButtonsController!.updateButtons(-1, maps: true)
                     break
                 case 4:
                     break
                 default:
                     NSLog("Invalid Button Index: %i", i)
-                    break
+                    return
                 }
+                updateButtons(i)
             }
         }
         
@@ -80,13 +89,13 @@ public class BottomButtonContainer : UIViewController  {
     public func getParent() -> UIViewController?{
         return self.presentingViewController
     }
-    public func resetButtons(index:Int){
+    public func updateButtons(index:Int){
         for var i = 0; i < BottomButtons.count; i+=1{
             if(i == index){
-                continue
+                BottomButtons[i].setBackgroundImage(UIImage(named: BottomButtonNamesGreen[i]), forState: UIControlState.Normal)
             }
             else{
-                // todo reset button images
+                BottomButtons[i].setBackgroundImage(UIImage(named: BottomButtonNamesBlue[i]), forState: UIControlState.Normal)
             }
         }
     }

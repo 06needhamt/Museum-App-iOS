@@ -18,6 +18,7 @@ public class TopButtonContainer : UIViewController {
     
     var parent: HomeViewController?
     let NUM_BUTTONS:CGFloat = 6
+    var map = false
     
     required public init(coder aDecoder: NSCoder) {
         parent = HomeViewController(coder: aDecoder)
@@ -48,14 +49,12 @@ public class TopButtonContainer : UIViewController {
         var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight))
         var image:UIImage? = (UIImage(named: TopButtonImageNamesBlue[i]))
         if(image == nil){
-            NSLog("NIL")
+            NSLog("Image is NIL")
         }
         else{
             NSLog("Image Loaded %@", TopButtonImageNamesBlue[i])
         
-        let newImage = ResizeImage(image!, size: CGSize(width: button.bounds.width, height: button.bounds.height))
-        button.setBackgroundImage(newImage, forState: UIControlState.Normal)
-        button.contentMode = UIViewContentMode.TopLeft
+        button.setBackgroundImage(image, forState: UIControlState.Normal)
         button.addTarget(self, action:"ButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
         
         TopButtons.append(button);
@@ -67,7 +66,24 @@ public class TopButtonContainer : UIViewController {
         {
             if(TopButtons[i] == sender){
                 NSLog("Button %i Was Pressed", i)
-                
+                switch(i){
+                case 0 :
+                    break
+                case 1:
+                    break
+                case 2:
+                    break
+                case 3:
+                    break
+                case 4:
+                    break
+                case 5:
+                    break
+                default:
+                    NSLog("Invalid Button Index: %i", i)
+                    return
+                }
+                updateButtons(i, maps: map)
             }
         }
         
@@ -85,22 +101,20 @@ public class TopButtonContainer : UIViewController {
         
     }
     
-    public func resetButtons(index:Int){
+    public func updateButtons(index:Int, maps:Bool){
         for var i = 0; i < TopButtons.count; i+=1{
-            if(i == index){
-                continue
+            map = maps
+            if(maps){
+                // todo add map buttons 
             }
             else{
-                // todo reset button images
+                if(i == index){
+                    TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesGreen[i]), forState: UIControlState.Normal)
+                }
+                else{
+                    TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesBlue[i]), forState: UIControlState.Normal)
+                }
             }
         }
-    }
-    private func ResizeImage(image: UIImage, size: CGSize) -> UIImage{
-        let scale = UIScreen.mainScreen().scale
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        image.drawInRect(CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        var newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage;
     }
 }

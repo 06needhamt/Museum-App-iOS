@@ -83,7 +83,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zot-qJ-yJG">
-                                <rect key="frame" x="0.0" y="120" width="375" height="439"/>
+                                <rect key="frame" x="0.0" y="110" width="375" height="460"/>
                                 <connections>
                                     <segue destination="etb-xY-Hhy" kind="embed" id="ZA3-wa-tKB"/>
                                 </connections>
@@ -144,18 +144,27 @@
                         <viewControllerLayoutGuide type="bottom" id="2Ut-Tg-xrs"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZtM-Cm-ei7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-1U-KgP">
+                                <rect key="frame" x="-52" y="-8" width="375" height="468"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="UJ2-1U-KgP" id="yp9-Ql-5kE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSO-uO-Vqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430.5" y="572.5"/>
+            <point key="canvasLocation" x="1430.5" y="572"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="600" height="600"/>
         <image name="Launcher Screen Background" width="600" height="991"/>
     </resources>
 </document>

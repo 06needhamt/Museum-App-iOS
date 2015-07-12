@@ -27,7 +27,32 @@ class ViewController: UIViewController {
     
     
     @IBAction func ButtonClicked(sender: AnyObject) {
-        
+        testDatabase()
+    }
+    
+    func testDatabase(){
+        copyDatabase()
+        let databasehelper: DatabaseLoader = DatabaseLoader()
+        databasehelper.openDatabase()
+        databasehelper.queryDatabase("SELECT * FROM trail")
+        databasehelper.closeDatabase()
+        NSLog("Database Working")
+    }
+    
+    func copyDatabase(){
+        let storePath : NSString = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last as! String
+        let fileManager : NSFileManager = NSFileManager.defaultManager()
+        var fileCopyError:NSError? = NSError()
+        if !fileManager.fileExistsAtPath((storePath as String) + "/museumDB" as String) {
+            NSLog("Copying Database")
+            let defaultStorePath : NSString! = NSBundle.mainBundle().pathForResource("museumDB", ofType: "")
+            if((defaultStorePath) != nil) {
+                fileManager.copyItemAtPath(defaultStorePath as String, toPath: storePath as String, error: &fileCopyError)
+            }
+        }
+        else{
+            NSLog("Database Already Exists")
+        }
     }
 }
 
