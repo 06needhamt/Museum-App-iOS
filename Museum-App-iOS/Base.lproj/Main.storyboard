@@ -1,25 +1,161 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="toI-0P-TRc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="M96-VZ-BTj">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="toI-0P-TRc" customClass="ViewController" customModule="Museum_App_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="pLA-uM-xvs"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ch-R4-SD4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="JGC-tM-KIy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Touch To Enter" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="flV-73-RNa">
+                                <rect key="frame" x="76" y="169" width="240" height="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPB-GH-Cim">
+                                <rect key="frame" x="-47" y="-4" width="363" height="617"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ButtonClicked:" destination="toI-0P-TRc" eventType="touchUpInside" id="jzq-KA-Fxn"/>
+                                    <segue destination="QZv-3Y-zm8" kind="show" id="g7i-L1-Hr9"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Launcher Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="XER-26-w6R">
+                                <rect key="frame" x="-113" y="0.0" width="600" height="608"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="V6R-I9-5K4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XER-26-w6R" secondAttribute="trailing" id="Mb2-SY-XVQ"/>
+                            <constraint firstItem="XER-26-w6R" firstAttribute="top" secondItem="JGC-tM-KIy" secondAttribute="topMargin" id="Sjj-xt-Pzd"/>
+                            <constraint firstItem="8Ch-R4-SD4" firstAttribute="top" secondItem="XER-26-w6R" secondAttribute="bottom" id="fZz-pK-5l4"/>
+                            <constraint firstItem="XER-26-w6R" firstAttribute="leading" secondItem="JGC-tM-KIy" secondAttribute="leadingMargin" id="g3l-Mv-Qfo"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="XER-26-w6R" id="S2Z-Uy-ePI"/>
+                        <outlet property="Button" destination="JPB-GH-Cim" id="G81-XJ-jjZ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fsl-YW-UES" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="280.5" y="532.5"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="PUk-wT-mqL">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QZv-3Y-zm8" customClass="HomeViewController" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kl2-A8-ngU"/>
+                        <viewControllerLayoutGuide type="bottom" id="yFK-EB-3mK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TT3-g7-qO8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lTh-07-8Oz">
+                                <rect key="frame" x="0.0" y="567" width="375" height="92"/>
+                                <connections>
+                                    <segue destination="iW8-EB-jMa" kind="embed" id="Mae-PE-EAy"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGt-Hk-KAX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="92"/>
+                                <connections>
+                                    <segue destination="jlt-Ky-Y0U" kind="embed" id="7ZZ-9K-LEG"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zot-qJ-yJG">
+                                <rect key="frame" x="0.0" y="120" width="375" height="439"/>
+                                <connections>
+                                    <segue destination="etb-xY-Hhy" kind="embed" id="ZA3-wa-tKB"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7T-DS-WCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003.5" y="636.5"/>
+        </scene>
+        <!--Top Button Container-->
+        <scene sceneID="ceb-xY-iMT">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jlt-Ky-Y0U" customClass="TopButtonContainer" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d74-KE-NNT"/>
+                        <viewControllerLayoutGuide type="bottom" id="QFJ-j3-36m"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WqQ-hc-f30">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTo-MD-tem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021" y="185"/>
+        </scene>
+        <!--Bottom Button Container-->
+        <scene sceneID="LKS-Gt-Jwc">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="iW8-EB-jMa" customClass="BottomButtonContainer" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wqr-jy-Tdi"/>
+                        <viewControllerLayoutGuide type="bottom" id="4wi-PR-yd4"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eZr-IF-fsu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRd-C7-tfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969.5" y="1169"/>
+        </scene>
+        <!--Home Page Content Container-->
+        <scene sceneID="1db-Th-SQM">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="etb-xY-Hhy" customClass="HomePageContentContainer" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sga-9v-zhf"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ut-Tg-xrs"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ZtM-Cm-ei7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSO-uO-Vqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430.5" y="572.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Launcher Screen Background" width="600" height="991"/>
+    </resources>
 </document>

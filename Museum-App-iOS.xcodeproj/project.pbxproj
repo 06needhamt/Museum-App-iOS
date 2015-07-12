@@ -13,6 +13,11 @@
 		32512C711B52727C00BC4ADC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32512C701B52727C00BC4ADC /* Images.xcassets */; };
 		32512C741B52727C00BC4ADC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32512C721B52727C00BC4ADC /* LaunchScreen.xib */; };
 		32512C801B52727D00BC4ADC /* Museum_App_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C7F1B52727D00BC4ADC /* Museum_App_iOSTests.swift */; };
+		32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C891B52733000BC4ADC /* BottomButtonContainer.swift */; };
+		32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */; };
+		32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8D1B52738800BC4ADC /* HomeViewController.swift */; };
+		32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */; };
+		32512C921B5273D500BC4ADC /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 32512C911B5273D500BC4ADC /* Icons */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		32512C791B52727D00BC4ADC /* Museum-App-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Museum-App-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32512C7E1B52727D00BC4ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32512C7F1B52727D00BC4ADC /* Museum_App_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Museum_App_iOSTests.swift; sourceTree = "<group>"; };
+		32512C891B52733000BC4ADC /* BottomButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomButtonContainer.swift; sourceTree = "<group>"; };
+		32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopButtonContainer.swift; sourceTree = "<group>"; };
+		32512C8D1B52738800BC4ADC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageContentContainer.swift; sourceTree = "<group>"; };
+		32512C911B5273D500BC4ADC /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +87,17 @@
 		32512C661B52727C00BC4ADC /* Museum-App-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				32512C911B5273D500BC4ADC /* Icons */,
 				32512C691B52727C00BC4ADC /* AppDelegate.swift */,
 				32512C6B1B52727C00BC4ADC /* ViewController.swift */,
 				32512C6D1B52727C00BC4ADC /* Main.storyboard */,
 				32512C701B52727C00BC4ADC /* Images.xcassets */,
 				32512C721B52727C00BC4ADC /* LaunchScreen.xib */,
 				32512C671B52727C00BC4ADC /* Supporting Files */,
+				32512C891B52733000BC4ADC /* BottomButtonContainer.swift */,
+				32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */,
+				32512C8D1B52738800BC4ADC /* HomeViewController.swift */,
+				32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -193,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32512C6F1B52727C00BC4ADC /* Main.storyboard in Resources */,
+				32512C921B5273D500BC4ADC /* Icons in Resources */,
 				32512C741B52727C00BC4ADC /* LaunchScreen.xib in Resources */,
 				32512C711B52727C00BC4ADC /* Images.xcassets in Resources */,
 			);
@@ -212,8 +228,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */,
 				32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */,
+				32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */,
 				32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */,
+				32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */,
+				32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
