@@ -30,7 +30,7 @@ public class TopButtonContainer : UIViewController {
         parent = getParent() as? HomeViewController;
         for var i:CGFloat = 0; i < NUM_BUTTONS; i++
         {
-            self.view.addSubview(CreateButton(i))
+            self.view.addSubview(CreateButton(i)) // create and add the buttons to the screen
         }
         
         //Cont.addSubview(CreateButton(CGFloat(1)))
@@ -42,20 +42,20 @@ public class TopButtonContainer : UIViewController {
     }
     
     private func CreateButton(index:CGFloat) -> UIButton{
-        let Viewwidth: CGFloat = self.view.bounds.width
-        let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 8)
-        var i:Int = Int(index)
+        let Viewwidth: CGFloat = self.view.bounds.width // get the width of the screen
+        let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 8) // get the height of the screen and divide it by eight because the buttons take up an eighth of the screen
+        var i:Int = Int(index) // convert index to an int
         var value:String = TopButtonImageNamesBlue[i]
-        var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight))
-        var image:UIImage? = (UIImage(named: TopButtonImageNamesBlue[i]))
+        var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight)) // create the button with a size and location
+        var image:UIImage? = (UIImage(named: TopButtonImageNamesBlue[i])) // load the image from assets
         if(image == nil){
             NSLog("Image is NIL")
         }
         else{
             NSLog("Image Loaded %@", TopButtonImageNamesBlue[i])
         
-        button.setBackgroundImage(image, forState: UIControlState.Normal)
-        button.addTarget(self, action:"ButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
+        button.setBackgroundImage(image, forState: UIControlState.Normal) // set the bacground image for the button
+        button.addTarget(self, action:"ButtonClicked:", forControlEvents: UIControlEvents.TouchDown) // add the on click listener to the button
         
         TopButtons.append(button);
         }
@@ -67,6 +67,7 @@ public class TopButtonContainer : UIViewController {
             if(TopButtons[i] == sender){
                 NSLog("Button %i Was Pressed", i)
                 switch(i){
+                    // TODO implement button clicks
                 case 0 :
                     break
                 case 1:
@@ -83,13 +84,14 @@ public class TopButtonContainer : UIViewController {
                     NSLog("Invalid Button Index: %i", i)
                     return
                 }
-                updateButtons(i, maps: map)
+                updateButtons(i, maps: map) // update the button images
             }
         }
         
     }
     
     public func getParent() -> UIViewController?{
+        // TODO find how to get the parent view controller
         return self.presentingViewController as? HomeViewController
     }
     
@@ -97,7 +99,7 @@ public class TopButtonContainer : UIViewController {
         for var i = 0; i < self.TopButtons.count; i+=1 {
             sleep(1000)
         }
-        // todo load map buttons
+        // TODO load map buttons
         
     }
     
@@ -105,14 +107,14 @@ public class TopButtonContainer : UIViewController {
         for var i = 0; i < TopButtons.count; i+=1{
             map = maps
             if(maps){
-                // todo add map buttons 
+                // TODO add map buttons
             }
             else{
                 if(i == index){
-                    TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesGreen[i]), forState: UIControlState.Normal)
+                    TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesGreen[i]), forState: UIControlState.Normal) // we clicked this button so load the green image
                 }
                 else{
-                    TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesBlue[i]), forState: UIControlState.Normal)
+                    TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesBlue[i]), forState: UIControlState.Normal) // otherwise load the blue image
                 }
             }
         }

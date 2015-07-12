@@ -22,7 +22,7 @@ public class HomeViewController : UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.childViewControllers
-        let controllers = self.childViewControllers
+        let controllers = self.childViewControllers // get references to the child view controllers
         for var i = 0; i < controllers.count; i+=1{
             NSLog("i = : %i", i)
             if(controllers[i].isKindOfClass(TopButtonContainer)){
