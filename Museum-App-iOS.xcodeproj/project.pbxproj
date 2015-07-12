@@ -17,7 +17,6 @@
 		32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */; };
 		32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8D1B52738800BC4ADC /* HomeViewController.swift */; };
 		32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */; };
-		32512C921B5273D500BC4ADC /* Icons in Resources */ = {isa = PBXBuildFile; fileRef = 32512C911B5273D500BC4ADC /* Icons */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 		32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopButtonContainer.swift; sourceTree = "<group>"; };
 		32512C8D1B52738800BC4ADC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageContentContainer.swift; sourceTree = "<group>"; };
-		32512C911B5273D500BC4ADC /* Icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Icons; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,6 @@
 		32512C661B52727C00BC4ADC /* Museum-App-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				32512C911B5273D500BC4ADC /* Icons */,
 				32512C691B52727C00BC4ADC /* AppDelegate.swift */,
 				32512C6B1B52727C00BC4ADC /* ViewController.swift */,
 				32512C6D1B52727C00BC4ADC /* Main.storyboard */,
@@ -208,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				32512C6F1B52727C00BC4ADC /* Main.storyboard in Resources */,
-				32512C921B5273D500BC4ADC /* Icons in Resources */,
 				32512C741B52727C00BC4ADC /* LaunchScreen.xib in Resources */,
 				32512C711B52727C00BC4ADC /* Images.xcassets in Resources */,
 			);
@@ -429,6 +425,7 @@
 				32512C851B52727D00BC4ADC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32512C861B52727D00BC4ADC /* Build configuration list for PBXNativeTarget "Museum-App-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +434,7 @@
 				32512C881B52727D00BC4ADC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

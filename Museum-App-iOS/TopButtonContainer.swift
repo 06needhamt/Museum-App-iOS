@@ -12,7 +12,7 @@ import UIKit
 public class TopButtonContainer : UIViewController {
     
     var TopButtons: [UIButton] = [UIButton]();
-    let TopButtonImageNamesBlue = [ "Aquarium Icon Blue.png", "Bugs Icon Blue.png", "Ancient World Icon Blue.png", "World Cultures Icon Blue.png", "Dinosaurs Icon Blue.png", "Space Icon Blue.png"]
+    let TopButtonImageNamesBlue = [ "Aquarium Icon Blue", "Bugs Icon Blue", "Ancient World Icon Blue", "World Cultures Icon Blue", "Dinosaurs Icon Blue", "Space Icon Blue"]
     
     let TopButtonImageNamesGreen = [ "Aquarium Icon Green", "Bugs Icon Green", "Ancient World Icon Green", "World Cultures Icon Green", "Dinosaurs Icon Green", "Space Icon Green"]
     
@@ -42,7 +42,7 @@ public class TopButtonContainer : UIViewController {
     
     private func CreateButton(index:CGFloat) -> UIButton{
         let Viewwidth: CGFloat = self.view.bounds.width
-        let Viewheight: CGFloat = self.view.bounds.height
+        let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 8)
         var i:Int = Int(index)
         var value:String = TopButtonImageNamesBlue[i]
         var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight))
@@ -50,10 +50,16 @@ public class TopButtonContainer : UIViewController {
         if(image == nil){
             NSLog("NIL")
         }
-        button.setImage(image, forState: UIControlState.Normal)
+        else{
+            NSLog("Image Loaded %@", TopButtonImageNamesBlue[i])
+        
+        let newImage = ResizeImage(image!, size: CGSize(width: button.bounds.width, height: button.bounds.height))
+        button.setBackgroundImage(newImage, forState: UIControlState.Normal)
+        button.contentMode = UIViewContentMode.TopLeft
         button.addTarget(self, action:"ButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
         
         TopButtons.append(button);
+        }
         return button
     }
     func ButtonClicked(sender: UIButton){
@@ -88,5 +94,13 @@ public class TopButtonContainer : UIViewController {
                 // todo reset button images
             }
         }
+    }
+    private func ResizeImage(image: UIImage, size: CGSize) -> UIImage{
+        let scale = UIScreen.mainScreen().scale
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        image.drawInRect(CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        var newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage;
     }
 }

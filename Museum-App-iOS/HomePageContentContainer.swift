@@ -11,10 +11,8 @@ import UIKit
 class HomePageContentContainer: UIViewController {
     
     var imageview: UIImageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0))
-    var image:UIImage? = UIImage(named: "Dinosaurs Icon Blue")
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageview.image = image
         self.view.addSubview(imageview)
         // Do any additional setup after loading the view.
     }
