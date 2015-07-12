@@ -30,6 +30,7 @@
 		32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */; };
 		32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8D1B52738800BC4ADC /* HomeViewController.swift */; };
 		32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */; };
+		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopButtonContainer.swift; sourceTree = "<group>"; };
 		32512C8D1B52738800BC4ADC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageContentContainer.swift; sourceTree = "<group>"; };
+		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */,
 				3236E6411B529E3000701D27 /* DatabaseLoader.swift */,
 				3236E6451B52A1D500701D27 /* Resources */,
+				32904CEC1B52D068006699A8 /* AquariumContentController.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */,
 				32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */,
 				3236E6441B529EBD00701D27 /* FMDatabaseVariadic.swift in Sources */,
 				32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */,

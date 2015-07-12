@@ -83,15 +83,27 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zot-qJ-yJG">
-                                <rect key="frame" x="0.0" y="110" width="375" height="460"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
                                 <connections>
                                     <segue destination="etb-xY-Hhy" kind="embed" id="ZA3-wa-tKB"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2g-WQ-Lta">
+                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
+                                <connections>
+                                    <segue destination="Iml-mr-p2Q" kind="embed" id="ONV-dk-FWv"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="AquariumContentController" destination="V2g-WQ-Lta" id="Ovd-jR-Uuu"/>
+                        <outlet property="BottomButtonsContentContainer" destination="lTh-07-8Oz" id="Hxm-F7-0gB"/>
+                        <outlet property="MainContentContainer" destination="Zot-qJ-yJG" id="82h-v0-DEN"/>
+                        <outlet property="TopButtonsContentContainer" destination="AGt-Hk-KAX" id="TV0-8b-Sfh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7T-DS-WCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="UJ2-1U-KgP">
-                                <rect key="frame" x="-52" y="-8" width="375" height="468"/>
+                                <rect key="frame" x="-52" y="-8" width="427" height="468"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,7 +172,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSO-uO-Vqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430.5" y="572"/>
+            <point key="canvasLocation" x="1530.5" y="572"/>
+        </scene>
+        <!--Aquarium Content Controller-->
+        <scene sceneID="Jkc-Us-bll">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mMO-ZS-mgY" customClass="AquariumContentController" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BBq-6r-N6h"/>
+                        <viewControllerLayoutGuide type="bottom" id="rHT-ne-Y7a"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pMa-ln-eeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-Zh-ZaY">
+                                <rect key="frame" x="5" y="-97" width="380" height="460"/>
+                                <connections>
+                                    <segue destination="mMO-ZS-mgY" kind="embed" id="ysw-Sr-DIa"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSA-g5-KOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="542" y="1204"/>
+        </scene>
+        <!--Aquarium Content Controller-->
+        <scene sceneID="utl-03-khr">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Iml-mr-p2Q" customClass="AquariumContentController" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pot-iW-xUJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="TIv-L2-rlt"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wAP-NT-QDt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPf-eT-EOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1517" y="1158"/>
         </scene>
     </scenes>
     <resources>

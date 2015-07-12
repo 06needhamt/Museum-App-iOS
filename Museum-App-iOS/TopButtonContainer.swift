@@ -69,6 +69,10 @@ public class TopButtonContainer : UIViewController {
                 switch(i){
                     // TODO implement button clicks
                 case 0 :
+                    parent?.AquariumContentController.hidden = false
+                    parent?.MainContentContainer.hidden = true
+                    map = false
+                    NSLog("Loading Aquarium");
                     break
                 case 1:
                     break

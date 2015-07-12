@@ -15,6 +15,10 @@ public class HomeViewController : UIViewController {
     var TopButtonsController : TopButtonContainer?
     var BottomButtonsController : BottomButtonContainer?
     
+    @IBOutlet weak var AquariumContentController: UIView!
+    @IBOutlet weak var MainContentContainer: UIView!
+    @IBOutlet weak var TopButtonsContentContainer: UIView!
+    @IBOutlet weak var BottomButtonsContentContainer: UIView!
     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,6 +45,8 @@ public class HomeViewController : UIViewController {
             
         }
         NSLog("Home View Controller Loaded")
+        self.MainContentContainer.hidden = false
+        self.AquariumContentController.hidden = true;
     }
     
     override public func didReceiveMemoryWarning() {
