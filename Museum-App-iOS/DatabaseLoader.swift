@@ -33,6 +33,7 @@ public class DatabaseLoader: NSObject {
         }
         else{
             NSLog("Database Opened Successfully YAY")
+            NSLog("DB Path %@", self.getDatabasePath())
             return true
         }
 
@@ -78,6 +79,10 @@ public class DatabaseLoader: NSObject {
                 }
             }
         }
+    }
+    
+    public func getDatabasePath() -> NSString{
+        return database.databasePath()!
     }
     
 }
