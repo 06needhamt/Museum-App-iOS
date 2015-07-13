@@ -30,6 +30,7 @@
 		32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */; };
 		32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8D1B52738800BC4ADC /* HomeViewController.swift */; };
 		32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */; };
+		3253071F1B53F9E800D04297 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3253071E1B53F9E800D04297 /* MapKit.framework */; };
 		325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E8D1E1B53BF50004A727F /* QRViewController.swift */; };
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopButtonContainer.swift; sourceTree = "<group>"; };
 		32512C8D1B52738800BC4ADC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageContentContainer.swift; sourceTree = "<group>"; };
+		3253071E1B53F9E800D04297 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		325E8D1E1B53BF50004A727F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3253071F1B53F9E800D04297 /* MapKit.framework in Frameworks */,
 				3236E6401B529D2F00701D27 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +140,7 @@
 		32512C5B1B52727C00BC4ADC = {
 			isa = PBXGroup;
 			children = (
+				3253071E1B53F9E800D04297 /* MapKit.framework */,
 				3236E63F1B529D2F00701D27 /* libsqlite3.0.dylib */,
 				32512C661B52727C00BC4ADC /* Museum-App-iOS */,
 				32512C7C1B52727D00BC4ADC /* Museum-App-iOSTests */,
@@ -249,6 +253,11 @@
 				TargetAttributes = {
 					32512C631B52727C00BC4ADC = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					32512C781B52727D00BC4ADC = {
 						CreatedOnToolsVersion = 6.4;

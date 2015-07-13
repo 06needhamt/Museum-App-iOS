@@ -8,8 +8,9 @@
 
 import UIKit
 
-class AquariumContentController : HomePageContentContainer {
+class AquariumContentController : UIViewController {
 
+    @IBOutlet weak var BackgroundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         NSLog("Aquarium Content Controller Loaded")

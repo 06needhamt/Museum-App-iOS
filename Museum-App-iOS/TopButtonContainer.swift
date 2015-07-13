@@ -21,13 +21,13 @@ public class TopButtonContainer : UIViewController {
     var map = false
     
     required public init(coder aDecoder: NSCoder) {
-        parent = HomeViewController(coder: aDecoder)
+        //parent = HomeViewController(coder: aDecoder)
         super.init(coder: aDecoder);
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        parent = getParent() as? HomeViewController;
+        //parent = getParent() as? HomeViewController;
         for var i:CGFloat = 0; i < NUM_BUTTONS; i++
         {
             self.view.addSubview(CreateButton(i)) // create and add the buttons to the screen
@@ -99,14 +99,13 @@ public class TopButtonContainer : UIViewController {
         
     }
     
-    public func getParent() -> UIViewController?{
-        // TODO find how to get the parent view controller
+    public func getParent() -> HomeViewController?{
         return self.presentingViewController as? HomeViewController
     }
     
     internal func LoadMapButtons(){
         for var i = 0; i < self.TopButtons.count; i+=1 {
-            sleep(1000)
+            
         }
         // TODO load map buttons
         

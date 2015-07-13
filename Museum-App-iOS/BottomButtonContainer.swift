@@ -23,7 +23,7 @@ public class BottomButtonContainer : UIViewController  {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        parent = getParent() as? HomeViewController
+        parent = getParent()
         for var i:CGFloat = 0; i < NUM_BUTTONS; i++
         {
             self.view.addSubview(CreateButton(i)) // create and add the buttons to the screen
@@ -62,11 +62,11 @@ public class BottomButtonContainer : UIViewController  {
                 NSLog("Button %i Was Pressed", i)
                 switch(i){
                 case 0 :
+                    parent!.TopButtonsController?.updateButtons(-1, maps: false)
                     break
                 case 1:
                     break
                 case 2:
-                    parent = getParent() as? HomeViewController
                     if(parent == nil){
                         NSLog("Parent is NIL")
                     }
@@ -75,13 +75,11 @@ public class BottomButtonContainer : UIViewController  {
                     }
                     break
                 case 3:
-                    // TODO fix this
-                    parent = getParent() as? HomeViewController
                     if(parent == nil){
                         NSLog("Parent is NIL")
                     }
                     else{
-                        parent!.TopButtonsController!.LoadMapButtons();
+                        parent!.TopButtonsController?.LoadMapButtons()
                         parent!.TopButtonsController!.updateButtons(-1, maps: true)
                     }
                     break
@@ -97,9 +95,8 @@ public class BottomButtonContainer : UIViewController  {
         
     }
     
-    public func getParent() -> UIViewController?{
-        // TODO find how to access the parent view controller
-        return self.presentingViewController
+    public func getParent() -> HomeViewController?{
+        return (self.presentingViewController as? HomeViewController)
     }
     public func updateButtons(index:Int){
         for var i = 0; i < BottomButtons.count; i+=1{

@@ -219,13 +219,27 @@
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wAP-NT-QDt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="lYJ-H8-wgk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome To the Aquarium" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9DO-ZN-Ohs">
+                                <rect key="frame" x="59" y="26" width="256" height="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="BackgroundImage" destination="lYJ-H8-wgk" id="X5R-os-NQn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPf-eT-EOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1517" y="1158"/>
+            <point key="canvasLocation" x="1516.5" y="1158"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oxt-zX-LCw">

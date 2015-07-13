@@ -43,8 +43,11 @@ public class HomeViewController : UIViewController {
                 //NSLog("Unknown view Controller Type: %s", controllers[i].kind!!)
                 continue
             }
-            
+         
         }
+        TopButtonsController?.parent = self
+        BottomButtonsController?.parent = self
+        
         NSLog("Home View Controller Loaded")
         self.MainContentContainer.hidden = false
         self.AquariumContentController.hidden = true
@@ -57,4 +60,6 @@ public class HomeViewController : UIViewController {
         delete(TopButtonsController)
         delete(BottomButtonsController)
     }
+    
+   
 }
