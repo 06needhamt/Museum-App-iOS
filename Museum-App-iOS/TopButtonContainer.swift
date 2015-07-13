@@ -16,9 +16,18 @@ public class TopButtonContainer : UIViewController {
     
     let TopButtonImageNamesGreen = [ "Aquarium Icon Green", "Bugs Icon Green", "Ancient World Icon Green", "World Cultures Icon Green", "Dinosaurs Icon Green", "Space Icon Green"]
     
+    let MapButtonImageNamesGreen = [ "Ground Floor Icon Green", "First Floor Icon Green","Second Floor Icon Green","Third Floor Icon Green", "Fourth Floor Icon Green", "Fifth Floor Icon Green"]
+    
+    let MapButtonImageNamesBlue = [ "Ground Floor Icon Blue", "First Floor Icon Blue","Second Floor Icon Blue","Third Floor Icon Blue", "Fourth Floor Icon Blue", "Fifth Floor Icon Blue"]
+    
+    let InfoButtonImageNamesBlue = ["App Info Icon Blue", "Museum Info Icon Blue", "Toilets Icon Blue", "Cafe Icon Blue", "Information Desk Icon Blue", "Planetarium Icon Blue"]
+    
+    let InfoButtonImageNamesGreen = ["App Info Icon Green", "Museum Info Icon Green", "Toilets Icon Green", "Cafe Icon Green", "Information Desk Icon Green", "Planetarium Icon Green"]
+
     var parent: HomeViewController?
     let NUM_BUTTONS:CGFloat = 6
-    var map = false
+    let NUM_MAP_BUTTONS:CGFloat = 6
+    var buttonType: ButtonType = ButtonType.Trail
     
     required public init(coder aDecoder: NSCoder) {
         //parent = HomeViewController(coder: aDecoder)
@@ -65,35 +74,73 @@ public class TopButtonContainer : UIViewController {
         for var i:Int = 0; i < TopButtons.count; i++
         {
             if(TopButtons[i] == sender){
-                NSLog("Button %i Was Pressed", i)
-                switch(i){
-                    // TODO implement button clicks
-                case 0 :
-                    if(parent == nil){
-                        NSLog("Parent is nil")
+                if(buttonType == ButtonType.Map){
+                    NSLog("Map Button %i Was Pressed", i)
+                    switch(i){
+                        // FIXME implement button clicks
+                    case 0:
+                        break
+                    case 1:
+                        break
+                    case 2:
+                        break
+                    case 3:
+                        break
+                    case 4:
+                        break
+                    case 5:
+                        break
+                    default:
+                        NSLog("Invalid Button Index: %i", i)
+                        return
                     }
-                    else{
+                }
+                else if(buttonType == ButtonType.Trail){
+                    NSLog("Trail Button %i Was Pressed", i)
+                    switch(i){
+                        // FIXME implement button clicks
+                    case 0:
                         parent?.AquariumContentController.hidden = false
                         parent?.MainContentContainer.hidden = true
-                        map = false
                         NSLog("Loading Aquarium");
+                        break
+                    case 1:
+                        break
+                    case 2:
+                        break
+                    case 3:
+                        break
+                    case 4:
+                        break
+                    case 5:
+                        break
+                    default:
+                        NSLog("Invalid Button Index: %i", i)
+                        return
                     }
-                    break
-                case 1:
-                    break
-                case 2:
-                    break
-                case 3:
-                    break
-                case 4:
-                    break
-                case 5:
-                    break
-                default:
-                    NSLog("Invalid Button Index: %i", i)
-                    return
                 }
-                updateButtons(i, maps: map) // update the button images
+                else{
+                    NSLog("Info Button %i Was Pressed", i)
+                    switch(i){
+                        // FIXME implement button clicks
+                    case 0:
+                        break
+                    case 1:
+                        break
+                    case 2:
+                        break
+                    case 3:
+                        break
+                    case 4:
+                        break
+                    case 5:
+                        break
+                    default:
+                        NSLog("Invalid Button Index: %i", i)
+                        return
+                    }
+                }
+                updateButtons(i, type: buttonType) // update the button images
             }
         }
         
@@ -105,24 +152,42 @@ public class TopButtonContainer : UIViewController {
     
     internal func LoadMapButtons(){
         for var i = 0; i < self.TopButtons.count; i+=1 {
-            
+            TopButtons[i].setBackgroundImage(UIImage(named: MapButtonImageNamesBlue[i]), forState: UIControlState.Normal)
         }
-        // TODO load map buttons
         
     }
     
-    public func updateButtons(index:Int, maps:Bool){
+    internal func LoadInformationButtons(){
+        for var i = 0; i < self.TopButtons.count; i+=1{
+            TopButtons[i].setBackgroundImage(UIImage(named: InfoButtonImageNamesBlue[i]), forState: UIControlState.Normal)
+        }
+    }
+    
+    public func updateButtons(index:Int, type:ButtonType){
         for var i = 0; i < TopButtons.count; i+=1{
-            map = maps
-            if(maps){
-                // TODO add map buttons
+            buttonType = type
+            if(type == ButtonType.Map){
+                if(i == index){
+                    TopButtons[i].setBackgroundImage(UIImage(named: MapButtonImageNamesGreen[i]), forState: UIControlState.Normal)
+                }
+                else{
+                    TopButtons[i].setBackgroundImage(UIImage(named: MapButtonImageNamesBlue[i]), forState: UIControlState.Normal)
+                }
             }
-            else{
+            else if(type == ButtonType.Trail){
                 if(i == index){
                     TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesGreen[i]), forState: UIControlState.Normal) // we clicked this button so load the green image
                 }
                 else{
                     TopButtons[i].setBackgroundImage(UIImage(named: TopButtonImageNamesBlue[i]), forState: UIControlState.Normal) // otherwise load the blue image
+                }
+            }
+            else{
+                if(i == index){
+                    TopButtons[i].setBackgroundImage(UIImage(named: InfoButtonImageNamesGreen[i]), forState: UIControlState.Normal)
+                }
+                else{
+                    TopButtons[i].setBackgroundImage(UIImage(named: InfoButtonImageNamesBlue[i]), forState: UIControlState.Normal)
                 }
             }
         }

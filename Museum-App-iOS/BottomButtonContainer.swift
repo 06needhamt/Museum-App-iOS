@@ -59,31 +59,23 @@ public class BottomButtonContainer : UIViewController  {
         for var i:Int = 0; i < BottomButtons.count; i++
         {
             if(BottomButtons[i] == sender){ // find which button was pressed
-                NSLog("Button %i Was Pressed", i)
+                NSLog("Bottom Button %i Was Pressed", i)
                 switch(i){
                 case 0 :
-                    parent!.TopButtonsController?.updateButtons(-1, maps: false)
+                    parent!.TopButtonsController?.updateButtons(-1, type: ButtonType.Trail)
                     break
                 case 1:
                     break
                 case 2:
-                    if(parent == nil){
-                        NSLog("Parent is NIL")
-                    }
-                    else{
-                        parent?.QRContentContainer.hidden = false
-                    }
+                    parent?.QRContentContainer.hidden = false
+                    
                     break
                 case 3:
-                    if(parent == nil){
-                        NSLog("Parent is NIL")
-                    }
-                    else{
-                        parent!.TopButtonsController?.LoadMapButtons()
-                        parent!.TopButtonsController!.updateButtons(-1, maps: true)
-                    }
+                    parent!.TopButtonsController?.LoadMapButtons()
+                    parent!.TopButtonsController!.updateButtons(-1, type:ButtonType.Map)
                     break
                 case 4:
+                    parent?.TopButtonsController?.updateButtons(-1, type: ButtonType.Information)
                     break
                 default:
                     NSLog("Invalid Button Index: %i", i)
