@@ -52,7 +52,7 @@ public class TopButtonContainer : UIViewController {
             NSLog("Image is NIL")
         }
         else{
-            NSLog("Image Loaded %@", TopButtonImageNamesBlue[i])
+            //NSLog("Image Loaded %@", TopButtonImageNamesBlue[i])
         
         button.setBackgroundImage(image, forState: UIControlState.Normal) // set the bacground image for the button
         button.addTarget(self, action:"ButtonClicked:", forControlEvents: UIControlEvents.TouchDown) // add the on click listener to the button

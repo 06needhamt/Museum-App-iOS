@@ -47,11 +47,12 @@ public class BottomButtonContainer : UIViewController  {
             NSLog("Image is NIL")
         }
         else{
-            NSLog("Image Loaded %@", BottomButtonNamesBlue[i])
-        }
+            //NSLog("Image Loaded %@", BottomButtonNamesBlue[i])
+        
         button.setBackgroundImage(image, forState: UIControlState.Normal) // set the image as the background of the button
         button.addTarget(self, action:"ButtonClicked:", forControlEvents: UIControlEvents.TouchDown) // add the on click listener to the button
         BottomButtons.append(button); // add the button to the array of buttons
+        }
         return button
     }
     func ButtonClicked(sender: UIButton){

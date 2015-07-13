@@ -35,8 +35,14 @@ class ViewController: UIViewController {
         copyDatabase() // copy the database to the documents folder which thanks to the ba****ds at apple moves evry time the app is installed in the emulator so need to find a permenent home
         let databasehelper: DatabaseLoader = DatabaseLoader() // create an instance of the database loader class to preform operations on the database
         databasehelper.openDatabase() // open the database
-        databasehelper.queryDatabase("SELECT * FROM trail") // run a query on the database
+        let results = databasehelper.queryDatabase("SELECT * FROM trail") // run a query on the database
+        while(results.next()){
+            let data = results.stringForColumn("tra_name")
+            NSLog("%@", data!)
+        }
+        results.close()
         databasehelper.closeDatabase() // close the database
+
         NSLog("Database Working") // if we didnt have an error here the database is working
     }
     

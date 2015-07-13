@@ -19,8 +19,9 @@ public class DatabaseLoader: NSObject {
     let database:FMDatabase
     
     public override init(){
-        resourcesFolder = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
-        path = resourcesFolder.stringByAppendingPathComponent("/museumDB")
+        //resourcesFolder = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
+        resourcesFolder = NSBundle.mainBundle().pathForResource("museumDB", ofType: "")!
+        path = resourcesFolder.stringByAppendingPathComponent("")
         database = FMDatabase(path: path)
         super.init()
     }
@@ -33,7 +34,7 @@ public class DatabaseLoader: NSObject {
         }
         else{
             NSLog("Database Opened Successfully YAY")
-            NSLog("DB Path %@", self.getDatabasePath())
+            //NSLog("DB Path %@", self.getDatabasePath())
             return true
         }
 

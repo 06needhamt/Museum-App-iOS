@@ -28,7 +28,7 @@ public class HomeViewController : UIViewController {
         self.childViewControllers
         let controllers = self.childViewControllers // get references to the child view controllers
         for var i = 0; i < controllers.count; i+=1{
-            NSLog("i = : %i", i)
+            //NSLog("i = : %i", i)
             if(controllers[i].isKindOfClass(TopButtonContainer)){
                 TopButtonsController = controllers[i] as? TopButtonContainer
             }
