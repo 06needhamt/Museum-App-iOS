@@ -86,4 +86,20 @@ public class DatabaseLoader: NSObject {
         return database.databasePath()!
     }
     
+    func copyDatabase(){
+        let storePath : NSString = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last as! String // get the location of the documents directory
+        let fileManager : NSFileManager = NSFileManager.defaultManager() // get the file manager
+        var fileCopyError:NSError? = NSError() // create an error pointer
+        if !fileManager.fileExistsAtPath((storePath as String) + "/museumDB" as String) { // check if the database already exists
+            NSLog("Copying Database")
+            let defaultStorePath : NSString! = NSBundle.mainBundle().pathForResource("museumDB", ofType: "") // get the default location of the database when the app was first installed
+            if((defaultStorePath) != nil) { // if the database exists within the original location
+                fileManager.copyItemAtPath(defaultStorePath as String, toPath: storePath as String, error: &fileCopyError) // copy it to the documents folder
+            }
+        }
+        else{
+            NSLog("Database Already Exists")
+        }
+    
+}
 }
