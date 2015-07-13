@@ -229,11 +229,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgJ-6e-1GN">
+                                <rect key="frame" x="-7" y="259" width="375" height="162"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="AvailableTrailPicker" destination="hgJ-6e-1GN" id="Jwe-cf-17g"/>
                         <outlet property="BackgroundImage" destination="lYJ-H8-wgk" id="X5R-os-NQn"/>
                     </connections>
                 </viewController>
