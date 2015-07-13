@@ -66,6 +66,13 @@ public class BottomButtonContainer : UIViewController  {
                 case 1:
                     break
                 case 2:
+                    parent = getParent() as? HomeViewController
+                    if(parent == nil){
+                        NSLog("Parent is NIL")
+                    }
+                    else{
+                        parent?.QRContentContainer.hidden = false
+                    }
                     break
                 case 3:
                     // TODO fix this
@@ -73,8 +80,10 @@ public class BottomButtonContainer : UIViewController  {
                     if(parent == nil){
                         NSLog("Parent is NIL")
                     }
-                    parent!.TopButtonsController!.LoadMapButtons();
-                    parent!.TopButtonsController!.updateButtons(-1, maps: true)
+                    else{
+                        parent!.TopButtonsController!.LoadMapButtons();
+                        parent!.TopButtonsController!.updateButtons(-1, maps: true)
+                    }
                     break
                 case 4:
                     break

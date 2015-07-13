@@ -94,6 +94,12 @@
                                     <segue destination="Iml-mr-p2Q" kind="embed" id="ONV-dk-FWv"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSS-QS-lSC">
+                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
+                                <connections>
+                                    <segue destination="Ux5-MR-3df" kind="embed" id="4du-ZP-SvE"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -102,12 +108,13 @@
                         <outlet property="AquariumContentController" destination="V2g-WQ-Lta" id="Ovd-jR-Uuu"/>
                         <outlet property="BottomButtonsContentContainer" destination="lTh-07-8Oz" id="Hxm-F7-0gB"/>
                         <outlet property="MainContentContainer" destination="Zot-qJ-yJG" id="82h-v0-DEN"/>
+                        <outlet property="QRContentContainer" destination="aSS-QS-lSC" id="JIy-Li-98S"/>
                         <outlet property="TopButtonsContentContainer" destination="AGt-Hk-KAX" id="TV0-8b-Sfh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7T-DS-WCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003.5" y="636.5"/>
+            <point key="canvasLocation" x="1042.5" y="638.5"/>
         </scene>
         <!--Top Button Container-->
         <scene sceneID="ceb-xY-iMT">
@@ -126,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTo-MD-tem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021" y="185"/>
+            <point key="canvasLocation" x="1042.5" y="169"/>
         </scene>
         <!--Bottom Button Container-->
         <scene sceneID="LKS-Gt-Jwc">
@@ -219,6 +226,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPf-eT-EOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1517" y="1158"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oxt-zX-LCw">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ux5-MR-3df" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GoB-E6-rsm"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Hy-qX-3SZ"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lPp-RD-2LJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H2T-bh-byi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647.5" y="577"/>
         </scene>
     </scenes>
     <resources>

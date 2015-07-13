@@ -30,6 +30,7 @@
 		32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */; };
 		32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8D1B52738800BC4ADC /* HomeViewController.swift */; };
 		32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */; };
+		325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E8D1E1B53BF50004A727F /* QRViewController.swift */; };
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopButtonContainer.swift; sourceTree = "<group>"; };
 		32512C8D1B52738800BC4ADC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageContentContainer.swift; sourceTree = "<group>"; };
+		325E8D1E1B53BF50004A727F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				3236E6411B529E3000701D27 /* DatabaseLoader.swift */,
 				3236E6451B52A1D500701D27 /* Resources */,
 				32904CEC1B52D068006699A8 /* AquariumContentController.swift */,
+				325E8D1E1B53BF50004A727F /* QRViewController.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */,
 				32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */,
 				32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */,
+				325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */,
 				3236E63E1B529B8900701D27 /* FMResultSet.m in Sources */,
 				32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */,
 				3236E63B1B529B8900701D27 /* FMDatabaseAdditions.m in Sources */,

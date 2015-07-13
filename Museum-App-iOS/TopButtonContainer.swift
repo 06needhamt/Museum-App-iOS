@@ -43,7 +43,7 @@ public class TopButtonContainer : UIViewController {
     
     private func CreateButton(index:CGFloat) -> UIButton{
         let Viewwidth: CGFloat = self.view.bounds.width // get the width of the screen
-        let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 8) // get the height of the screen and divide it by eight because the buttons take up an eighth of the screen
+        let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 7.25) // get the height of the screen and divide it by eight because the buttons take up an eighth of the screen
         var i:Int = Int(index) // convert index to an int
         var value:String = TopButtonImageNamesBlue[i]
         var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight)) // create the button with a size and location
@@ -69,10 +69,15 @@ public class TopButtonContainer : UIViewController {
                 switch(i){
                     // TODO implement button clicks
                 case 0 :
-                    parent?.AquariumContentController.hidden = false
-                    parent?.MainContentContainer.hidden = true
-                    map = false
-                    NSLog("Loading Aquarium");
+                    if(parent == nil){
+                        NSLog("Parent is nil")
+                    }
+                    else{
+                        parent?.AquariumContentController.hidden = false
+                        parent?.MainContentContainer.hidden = true
+                        map = false
+                        NSLog("Loading Aquarium");
+                    }
                     break
                 case 1:
                     break
