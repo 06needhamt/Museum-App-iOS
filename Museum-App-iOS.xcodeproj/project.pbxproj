@@ -18,7 +18,6 @@
 		3236E64D1B52A27B00701D27 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 3236E6481B52A27B00701D27 /* images */; };
 		3236E64E1B52A27B00701D27 /* merge12547865245154.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3236E6491B52A27B00701D27 /* merge12547865245154.txt */; };
 		3236E64F1B52A27B00701D27 /* Museum Images in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64A1B52A27B00701D27 /* Museum Images */; };
-		3236E6501B52A27B00701D27 /* museumDB in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64B1B52A27B00701D27 /* museumDB */; };
 		3236E6511B52A27B00701D27 /* webpages in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64C1B52A27B00701D27 /* webpages */; };
 		32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C691B52727C00BC4ADC /* AppDelegate.swift */; };
 		32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C6B1B52727C00BC4ADC /* ViewController.swift */; };
@@ -33,6 +32,8 @@
 		3253071F1B53F9E800D04297 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3253071E1B53F9E800D04297 /* MapKit.framework */; };
 		325307211B540D8700D04297 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325307201B540D8700D04297 /* ButtonType.swift */; };
 		325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E8D1E1B53BF50004A727F /* QRViewController.swift */; };
+		327DDEF31B55179500908F64 /* museumDB in Resources */ = {isa = PBXBuildFile; fileRef = 327DDEF21B55179500908F64 /* museumDB */; };
+		327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DDEF41B551D2900908F64 /* BugsConentController.swift */; };
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +66,6 @@
 		3236E6481B52A27B00701D27 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		3236E6491B52A27B00701D27 /* merge12547865245154.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = merge12547865245154.txt; sourceTree = "<group>"; };
 		3236E64A1B52A27B00701D27 /* Museum Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Museum Images"; sourceTree = "<group>"; };
-		3236E64B1B52A27B00701D27 /* museumDB */ = {isa = PBXFileReference; lastKnownFileType = file; path = museumDB; sourceTree = "<group>"; };
 		3236E64C1B52A27B00701D27 /* webpages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = webpages; sourceTree = "<group>"; };
 		32512C641B52727C00BC4ADC /* Museum-App-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Museum-App-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32512C681B52727C00BC4ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		3253071E1B53F9E800D04297 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		325307201B540D8700D04297 /* ButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		325E8D1E1B53BF50004A727F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		327DDEF21B55179500908F64 /* museumDB */ = {isa = PBXFileReference; lastKnownFileType = file; path = museumDB; sourceTree = "<group>"; };
+		327DDEF41B551D2900908F64 /* BugsConentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsConentController.swift; sourceTree = "<group>"; };
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,10 +112,10 @@
 		3236E6451B52A1D500701D27 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				327DDEF21B55179500908F64 /* museumDB */,
 				3236E6481B52A27B00701D27 /* images */,
 				3236E6491B52A27B00701D27 /* merge12547865245154.txt */,
 				3236E64A1B52A27B00701D27 /* Museum Images */,
-				3236E64B1B52A27B00701D27 /* museumDB */,
 				3236E64C1B52A27B00701D27 /* webpages */,
 			);
 			name = Resources;
@@ -178,6 +180,7 @@
 				32904CEC1B52D068006699A8 /* AquariumContentController.swift */,
 				325E8D1E1B53BF50004A727F /* QRViewController.swift */,
 				325307201B540D8700D04297 /* ButtonType.swift */,
+				327DDEF41B551D2900908F64 /* BugsConentController.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -294,9 +297,9 @@
 			files = (
 				3236E64E1B52A27B00701D27 /* merge12547865245154.txt in Resources */,
 				3236E64F1B52A27B00701D27 /* Museum Images in Resources */,
+				327DDEF31B55179500908F64 /* museumDB in Resources */,
 				3236E64D1B52A27B00701D27 /* images in Resources */,
 				32512C6F1B52727C00BC4ADC /* Main.storyboard in Resources */,
-				3236E6501B52A27B00701D27 /* museumDB in Resources */,
 				32512C741B52727C00BC4ADC /* LaunchScreen.xib in Resources */,
 				3236E6511B52A27B00701D27 /* webpages in Resources */,
 				32512C711B52727C00BC4ADC /* Images.xcassets in Resources */,
@@ -332,6 +335,7 @@
 				325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */,
 				3236E63E1B529B8900701D27 /* FMResultSet.m in Sources */,
 				32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */,
+				327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */,
 				3236E63B1B529B8900701D27 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

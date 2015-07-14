@@ -102,9 +102,14 @@ public class TopButtonContainer : UIViewController {
                     case 0:
                         parent?.AquariumContentController.hidden = false
                         parent?.MainContentContainer.hidden = true
+                        parent?.BugsContentController.hidden = true
                         NSLog("Loading Aquarium");
                         break
                     case 1:
+                        parent?.AquariumContentController.hidden = true
+                        parent?.MainContentContainer.hidden = true
+                        parent?.BugsContentController.hidden = false
+                        NSLog("Loading Bugs")
                         break
                     case 2:
                         break

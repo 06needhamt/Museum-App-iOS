@@ -65,6 +65,7 @@ public class BottomButtonContainer : UIViewController  {
                     parent!.TopButtonsController?.updateButtons(-1, type: ButtonType.Trail)
                     break
                 case 1:
+                    
                     break
                 case 2:
                     parent?.QRContentContainer.hidden = false

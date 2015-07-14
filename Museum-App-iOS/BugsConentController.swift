@@ -1,27 +1,28 @@
 //
-//  AquariumContentController.swift
+//  BugsConentController.swift
 //  Museum-App-iOS
 //
-//  Created by THOMAS NEEDHAM on 12/07/2015.
+//  Created by THOMAS NEEDHAM on 14/07/2015.
 //  Copyright (c) 2015 THOMAS NEEDHAM. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class AquariumContentController : UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
-
-    @IBOutlet weak var AvailableTrailPicker: UIPickerView!
+class BugsConentController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+    var Trails:[String] = []
+    
+    @IBOutlet weak var TitleText: UITextView!
+    @IBOutlet weak var DescriptionText: UITextView!
     @IBOutlet weak var BackgroundImage: UIImageView!
     @IBOutlet weak var MapImage: UIImageView!
-    
-    @IBOutlet weak var DescriptionText: UITextView!
-    @IBOutlet weak var TitleText: UITextView!
-    var Trails:[String] = [] // array for spinner data
+    @IBOutlet weak var AvailableTrailPicker: UIPickerView!
     
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AvailableTrailPicker.delegate = self as UIPickerViewDelegate
@@ -34,7 +35,7 @@ class AquariumContentController : UIViewController,UIPickerViewDataSource,UIPick
         }
         NSLog("%i Trails Found" , Trails.count)
         db.closeDatabase() // close the database
-        NSLog("Aquarium Content Controller Loaded")
+        NSLog("Bugs Content Controller Loaded")
     }
     
     override func didReceiveMemoryWarning() {

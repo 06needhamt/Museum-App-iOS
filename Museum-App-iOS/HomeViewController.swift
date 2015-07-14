@@ -20,7 +20,8 @@ public class HomeViewController : UIViewController {
     @IBOutlet weak var TopButtonsContentContainer: UIView!
     @IBOutlet weak var BottomButtonsContentContainer: UIView!
     @IBOutlet weak var QRContentContainer: UIView!
-    
+    @IBOutlet weak var BugsContentController: UIView!
+    //var containerViews:[(AnyObject!,String)] = [(nil,"")]
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -43,7 +44,8 @@ public class HomeViewController : UIViewController {
                 //NSLog("Unknown view Controller Type: %s", controllers[i].kind!!)
                 continue
             }
-         
+//         containerViews.removeAll(keepCapacity: true)
+//         containerViews.append(AquariumContentController,"Aquarium")
         }
         TopButtonsController?.parent = self
         BottomButtonsController?.parent = self
@@ -52,6 +54,7 @@ public class HomeViewController : UIViewController {
         self.MainContentContainer.hidden = false
         self.AquariumContentController.hidden = true
         self.QRContentContainer.hidden = true
+        self.BugsContentController.hidden = true
     }
     
     override public func didReceiveMemoryWarning() {

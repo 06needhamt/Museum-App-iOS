@@ -100,6 +100,12 @@
                                     <segue destination="Ux5-MR-3df" kind="embed" id="4du-ZP-SvE"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-BT-bqu">
+                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
+                                <connections>
+                                    <segue destination="XfY-Ve-o8T" kind="embed" id="dkK-AJ-MCE"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -107,6 +113,7 @@
                     <connections>
                         <outlet property="AquariumContentController" destination="V2g-WQ-Lta" id="Ovd-jR-Uuu"/>
                         <outlet property="BottomButtonsContentContainer" destination="lTh-07-8Oz" id="Hxm-F7-0gB"/>
+                        <outlet property="BugsContentController" destination="gvb-BT-bqu" id="4hK-om-8J0"/>
                         <outlet property="MainContentContainer" destination="Zot-qJ-yJG" id="82h-v0-DEN"/>
                         <outlet property="QRContentContainer" destination="aSS-QS-lSC" id="JIy-Li-98S"/>
                         <outlet property="TopButtonsContentContainer" destination="AGt-Hk-KAX" id="TV0-8b-Sfh"/>
@@ -224,7 +231,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome To the Aquarium" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9DO-ZN-Ohs">
-                                <rect key="frame" x="59" y="26" width="256" height="40"/>
+                                <rect key="frame" x="63" y="26" width="256" height="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -236,6 +243,15 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                             </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Put More Information here" translatesAutoresizingMaskIntoConstraints="NO" id="GZZ-Lg-deV">
+                                <rect key="frame" x="71" y="74" width="240" height="53"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="First Floor Map" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-pH-Glf">
+                                <rect key="frame" x="36" y="154" width="310" height="171"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -243,6 +259,9 @@
                     <connections>
                         <outlet property="AvailableTrailPicker" destination="hgJ-6e-1GN" id="Jwe-cf-17g"/>
                         <outlet property="BackgroundImage" destination="lYJ-H8-wgk" id="X5R-os-NQn"/>
+                        <outlet property="DescriptionText" destination="GZZ-Lg-deV" id="tHC-gW-0ng"/>
+                        <outlet property="MapImage" destination="yHx-pH-Glf" id="jxg-fL-Hiy"/>
+                        <outlet property="TitleText" destination="9DO-ZN-Ohs" id="Hls-EP-Ud9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPf-eT-EOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,9 +287,60 @@
             </objects>
             <point key="canvasLocation" x="647.5" y="577"/>
         </scene>
+        <!--Bugs Conent Controller-->
+        <scene sceneID="y5A-7l-pxE">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XfY-Ve-o8T" customClass="BugsConentController" customModule="Museum_App_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YvD-cU-Fam"/>
+                        <viewControllerLayoutGuide type="bottom" id="udA-SX-xQO"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bLL-MZ-GmO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-ce-bfj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome To Bugs" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AoX-WX-jOo">
+                                <rect key="frame" x="67" y="20" width="240" height="44"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Put More Information Here" translatesAutoresizingMaskIntoConstraints="NO" id="JvY-UI-63a">
+                                <rect key="frame" x="94" y="72" width="240" height="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Second Floor Map" translatesAutoresizingMaskIntoConstraints="NO" id="9c0-Cj-oMO">
+                                <rect key="frame" x="49" y="153" width="310" height="171"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riI-zL-0GU">
+                                <rect key="frame" x="-7" y="273" width="375" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="AvailableTrailPicker" destination="riI-zL-0GU" id="s8I-wT-JF0"/>
+                        <outlet property="BackgroundImage" destination="9c0-Cj-oMO" id="Rse-Us-OlZ"/>
+                        <outlet property="DescriptionText" destination="JvY-UI-63a" id="G7a-8i-bFj"/>
+                        <outlet property="MapImage" destination="9c0-Cj-oMO" id="nLH-1v-BcR"/>
+                        <outlet property="TitleText" destination="AoX-WX-jOo" id="FUP-ld-DrQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fW-tw-29c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1525.5" y="47"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="600" height="600"/>
+        <image name="First Floor Map" width="975" height="752"/>
         <image name="Launcher Screen Background" width="600" height="991"/>
+        <image name="Second Floor Map" width="975" height="752"/>
     </resources>
 </document>
