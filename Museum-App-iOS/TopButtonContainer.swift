@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class TopButtonContainer : UIViewController {
+internal class TopButtonContainer : UIViewController {
     
     var TopButtons: [UIButton] = [UIButton]();
     let TopButtonImageNamesBlue = [ "Aquarium Icon Blue", "Bugs Icon Blue", "Ancient World Icon Blue", "World Cultures Icon Blue", "Dinosaurs Icon Blue", "Space Icon Blue"]
@@ -29,12 +29,12 @@ public class TopButtonContainer : UIViewController {
     let NUM_MAP_BUTTONS:CGFloat = 6
     var buttonType: ButtonType = ButtonType.Trail
     
-    required public init(coder aDecoder: NSCoder) {
+    required internal init(coder aDecoder: NSCoder) {
         //parent = HomeViewController(coder: aDecoder)
         super.init(coder: aDecoder);
     }
     
-    override public func viewDidLoad() {
+    override internal func viewDidLoad() {
         super.viewDidLoad()
         //parent = getParent() as? HomeViewController;
         for var i:CGFloat = 0; i < NUM_BUTTONS; i++
@@ -46,7 +46,7 @@ public class TopButtonContainer : UIViewController {
         NSLog("Top buttons Loaded")
     }
     
-    override public func didReceiveMemoryWarning() {
+    override internal func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
@@ -103,12 +103,14 @@ public class TopButtonContainer : UIViewController {
                         parent?.AquariumContentController.hidden = false
                         parent?.MainContentContainer.hidden = true
                         parent?.BugsContentController.hidden = true
+                        parent?.QRContentContainer.hidden = true
                         NSLog("Loading Aquarium");
                         break
                     case 1:
                         parent?.AquariumContentController.hidden = true
                         parent?.MainContentContainer.hidden = true
                         parent?.BugsContentController.hidden = false
+                        parent?.QRContentContainer.hidden = true
                         NSLog("Loading Bugs")
                         break
                     case 2:
@@ -151,7 +153,7 @@ public class TopButtonContainer : UIViewController {
         
     }
     
-    public func getParent() -> HomeViewController?{
+    internal func getParent() -> HomeViewController?{
         return self.presentingViewController as? HomeViewController
     }
     
@@ -168,7 +170,7 @@ public class TopButtonContainer : UIViewController {
         }
     }
     
-    public func updateButtons(index:Int, type:ButtonType){
+    internal func updateButtons(index:Int, type:ButtonType){
         for var i = 0; i < TopButtons.count; i+=1{
             buttonType = type
             if(type == ButtonType.Map){

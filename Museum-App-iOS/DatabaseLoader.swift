@@ -12,13 +12,13 @@
 import Foundation
 import UIKit
 
-public class DatabaseLoader: NSObject {
+internal class DatabaseLoader: NSObject {
 
     let resourcesFolder:String
     let path:String
     let database:FMDatabase
     
-    public override init(){
+    internal override init(){
         //resourcesFolder = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
         resourcesFolder = NSBundle.mainBundle().pathForResource("museumDB", ofType: "")!
         path = resourcesFolder.stringByAppendingPathComponent("")
@@ -26,7 +26,7 @@ public class DatabaseLoader: NSObject {
         super.init()
     }
   
-    public func openDatabase() -> Bool{
+    internal func openDatabase() -> Bool{
         // try to open the database
         if(!database.open()){
             NSLog("Database Not Opened")
@@ -40,7 +40,7 @@ public class DatabaseLoader: NSObject {
 
     }
     
-    public func closeDatabase() -> Bool{
+    internal func closeDatabase() -> Bool{
         // try to close the database
         if(!database.close()){
             NSLog("Database Not Closed")
@@ -52,7 +52,7 @@ public class DatabaseLoader: NSObject {
         }
     }
     
-    public func queryDatabase(query: String) -> FMResultSet!{
+    internal func queryDatabase(query: String) -> FMResultSet!{
         // try to open the database
         if(!openDatabase()){
             NSLog("Database could not be opened for queries")
@@ -82,7 +82,7 @@ public class DatabaseLoader: NSObject {
         }
     }
     
-    public func getDatabasePath() -> NSString{
+    internal func getDatabasePath() -> NSString{
         return database.databasePath()!
     }
     

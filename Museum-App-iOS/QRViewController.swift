@@ -10,17 +10,17 @@ import Foundation
 import AVFoundation
 import UIKit
 
-public class QRViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
+internal class QRViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
     
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var QRCodeFrameView: UIView?
     
-    required public init(coder aDecoder: NSCoder){
+    required internal init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
     
-    override public func viewDidLoad() {
+    override internal func viewDidLoad() {
         super.viewDidLoad()
         let captureDevice:AVCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         var error:NSError?
@@ -42,7 +42,7 @@ public class QRViewController: UIViewController,AVCaptureMetadataOutputObjectsDe
         NSLog("QR Controller Loaded");
     }
     
-    override public func didReceiveMemoryWarning() {
+    override internal func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 

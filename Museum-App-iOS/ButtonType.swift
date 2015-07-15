@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum ButtonType : Int{
+internal enum ButtonType : Int{
     case Trail = 0, Map = 1, Information = 2
 }

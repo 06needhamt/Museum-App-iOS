@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class HomeViewController : UIViewController {
+internal class HomeViewController : UIViewController {
     
     var contentController: HomePageContentContainer?
     var TopButtonsController : TopButtonContainer?
@@ -21,11 +21,11 @@ public class HomeViewController : UIViewController {
     @IBOutlet weak var BottomButtonsContentContainer: UIView!
     @IBOutlet weak var QRContentContainer: UIView!
     @IBOutlet weak var BugsContentController: UIView!
-    //var containerViews:[(AnyObject!,String)] = [(nil,"")]
-    required public init(coder aDecoder: NSCoder) {
+    var containerViews:[(UIView!,String)] = [(nil,"")]
+    required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    override public func viewDidLoad() {
+    override internal func viewDidLoad() {
         super.viewDidLoad()
         self.childViewControllers
         let controllers = self.childViewControllers // get references to the child view controllers
@@ -45,7 +45,7 @@ public class HomeViewController : UIViewController {
                 continue
             }
 //         containerViews.removeAll(keepCapacity: true)
-//         containerViews.append(AquariumContentController,"Aquarium")
+//         containerViews.append((AquariumContentController,"Aquarium"))// what the f**k apple why cant we add protocol object optionals to an array ???
         }
         TopButtonsController?.parent = self
         BottomButtonsController?.parent = self
@@ -57,7 +57,7 @@ public class HomeViewController : UIViewController {
         self.BugsContentController.hidden = true
     }
     
-    override public func didReceiveMemoryWarning() {
+    override internal func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         delete(contentController)
         delete(TopButtonsController)

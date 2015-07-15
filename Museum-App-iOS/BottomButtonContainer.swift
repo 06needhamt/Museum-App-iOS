@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-public class BottomButtonContainer : UIViewController  {
+internal class BottomButtonContainer : UIViewController  {
     var BottomButtons: [UIButton] = [UIButton]();
     var parent: HomeViewController?
     let NUM_BUTTONS:CGFloat = 5
     let BottomButtonNamesBlue:[String] = ["Trail Icon Blue", "Explorer Trail Icon Blue", "QR Icon Blue", "Map Icon Blue", "Information Icon Blue"]
     let BottomButtonNamesGreen:[String] = ["Trail Icon Green", "Explorer Trail Icon Green", "QR Icon Green", "Map Icon Green", "Information Icon Green"]
     
-    required public init(coder aDecoder: NSCoder) {
+    required internal init(coder aDecoder: NSCoder) {
         //parent = HomeViewController(coder: aDecoder)
         super.init(coder: aDecoder);
     }
     
-    override public func viewDidLoad() {
+    override internal func viewDidLoad() {
         super.viewDidLoad()
         parent = getParent()
         for var i:CGFloat = 0; i < NUM_BUTTONS; i++
@@ -33,7 +33,7 @@ public class BottomButtonContainer : UIViewController  {
         NSLog("Bottom buttons Loaded")
     }
     
-    override public func didReceiveMemoryWarning() {
+    override internal func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
@@ -65,11 +65,14 @@ public class BottomButtonContainer : UIViewController  {
                     parent!.TopButtonsController?.updateButtons(-1, type: ButtonType.Trail)
                     break
                 case 1:
-                    
+                    parent?.TopButtonsController?.updateButtons(-1, type: ButtonType.Trail)
                     break
                 case 2:
                     parent?.QRContentContainer.hidden = false
-                    
+                    parent?.MainContentContainer.hidden = true
+                    parent?.AquariumContentController.hidden = true
+                    parent?.BugsContentController.hidden = true
+                    parent?.TopButtonsController?.updateButtons(-1, type: ButtonType.Trail)
                     break
                 case 3:
                     parent!.TopButtonsController?.LoadMapButtons()
@@ -88,10 +91,10 @@ public class BottomButtonContainer : UIViewController  {
         
     }
     
-    public func getParent() -> HomeViewController?{
+    internal func getParent() -> HomeViewController?{
         return (self.presentingViewController as? HomeViewController)
     }
-    public func updateButtons(index:Int){
+    internal func updateButtons(index:Int){
         for var i = 0; i < BottomButtons.count; i+=1{
             if(i == index){
                 BottomButtons[i].setBackgroundImage(UIImage(named: BottomButtonNamesGreen[i]), forState: UIControlState.Normal) // we clicked this button so show the green image

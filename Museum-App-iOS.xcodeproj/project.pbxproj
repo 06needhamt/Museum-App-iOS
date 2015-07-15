@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320597EE1B55294D0034DF74 /* TrailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320597ED1B55294D0034DF74 /* TrailManager.swift */; };
 		3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6301B529B8900701D27 /* FMDatabase.m */; };
 		3236E63B1B529B8900701D27 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6321B529B8900701D27 /* FMDatabaseAdditions.m */; };
 		3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6341B529B8900701D27 /* FMDatabasePool.m */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320597ED1B55294D0034DF74 /* TrailManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailManager.swift; sourceTree = "<group>"; };
 		3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Museum-App-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		3236E62F1B529B8900701D27 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		3236E6301B529B8900701D27 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				325E8D1E1B53BF50004A727F /* QRViewController.swift */,
 				325307201B540D8700D04297 /* ButtonType.swift */,
 				327DDEF41B551D2900908F64 /* BugsConentController.swift */,
+				320597ED1B55294D0034DF74 /* TrailManager.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				325307211B540D8700D04297 /* ButtonType.swift in Sources */,
 				32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */,
 				32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */,
+				320597EE1B55294D0034DF74 /* TrailManager.swift in Sources */,
 				325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */,
 				3236E63E1B529B8900701D27 /* FMResultSet.m in Sources */,
 				32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */,
