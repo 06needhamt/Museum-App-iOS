@@ -27,16 +27,19 @@ class QuestionManager: NSObject {
             return true
         }
         question = steps[questionNum]
+        
+        switch(Int(question.getQuestionType().rawValue.value)){ // wtf why cant we use Int64 in switch case so we have to pointlessly cast to int first what the f**k
+        case Int(QuestionType.Normal.rawValue.value):
+            // FIXME call single answer
+            break
+            
+        case Int(QuestionType.MultiChoice.rawValue.value):
+            // FIXME call multi choice
+            break
+        default:
+            NSLog("Invalid Question Type")
+        }
         return true
-//        switch(question.getQuestionType().rawValue.value){
-//        case QuestionType.Normal.rawValue.value:
-//            // FIXME call single answer
-//            break
-//            
-//        case QuestionType.MultiChoice:
-//            // FIXME call milti choice
-//            break
-//        }
     }
 }
 
