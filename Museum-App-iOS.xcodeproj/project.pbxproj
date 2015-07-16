@@ -33,9 +33,17 @@
 		3253071F1B53F9E800D04297 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3253071E1B53F9E800D04297 /* MapKit.framework */; };
 		325307211B540D8700D04297 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325307201B540D8700D04297 /* ButtonType.swift */; };
 		325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E8D1E1B53BF50004A727F /* QRViewController.swift */; };
+		3260CDFD1B582EA600CEA424 /* TrailStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260CDFC1B582EA600CEA424 /* TrailStep.swift */; };
+		3260CDFF1B5833EA00CEA424 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */; };
 		327DDEF31B55179500908F64 /* museumDB in Resources */ = {isa = PBXBuildFile; fileRef = 327DDEF21B55179500908F64 /* museumDB */; };
 		327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DDEF41B551D2900908F64 /* BugsConentController.swift */; };
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
+		32DD32461B57C41A00D97C70 /* TrailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32451B57C41A00D97C70 /* TrailInfo.swift */; };
+		32DD32481B57C47B00D97C70 /* TrailType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32471B57C47B00D97C70 /* TrailType.swift */; };
+		32DD324A1B57CCA500D97C70 /* ArtefactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32491B57CCA500D97C70 /* ArtefactInfo.swift */; };
+		32DD324C1B57D16600D97C70 /* TrailStepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD324B1B57D16600D97C70 /* TrailStepInfo.swift */; };
+		32DD324E1B57D30000D97C70 /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD324D1B57D30000D97C70 /* QuestionType.swift */; };
+		32DD32501B57DA8D00D97C70 /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD324F1B57DA8D00D97C70 /* Modes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,9 +94,17 @@
 		3253071E1B53F9E800D04297 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		325307201B540D8700D04297 /* ButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		325E8D1E1B53BF50004A727F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		3260CDFC1B582EA600CEA424 /* TrailStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailStep.swift; sourceTree = "<group>"; };
+		3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		327DDEF21B55179500908F64 /* museumDB */ = {isa = PBXFileReference; lastKnownFileType = file; path = museumDB; sourceTree = "<group>"; };
 		327DDEF41B551D2900908F64 /* BugsConentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsConentController.swift; sourceTree = "<group>"; };
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
+		32DD32451B57C41A00D97C70 /* TrailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailInfo.swift; sourceTree = "<group>"; };
+		32DD32471B57C47B00D97C70 /* TrailType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailType.swift; sourceTree = "<group>"; };
+		32DD32491B57CCA500D97C70 /* ArtefactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtefactInfo.swift; sourceTree = "<group>"; };
+		32DD324B1B57D16600D97C70 /* TrailStepInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailStepInfo.swift; sourceTree = "<group>"; };
+		32DD324D1B57D30000D97C70 /* QuestionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
+		32DD324F1B57DA8D00D97C70 /* Modes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +200,14 @@
 				325307201B540D8700D04297 /* ButtonType.swift */,
 				327DDEF41B551D2900908F64 /* BugsConentController.swift */,
 				320597ED1B55294D0034DF74 /* TrailManager.swift */,
+				32DD32451B57C41A00D97C70 /* TrailInfo.swift */,
+				32DD32471B57C47B00D97C70 /* TrailType.swift */,
+				32DD32491B57CCA500D97C70 /* ArtefactInfo.swift */,
+				32DD324B1B57D16600D97C70 /* TrailStepInfo.swift */,
+				32DD324D1B57D30000D97C70 /* QuestionType.swift */,
+				32DD324F1B57DA8D00D97C70 /* Modes.swift */,
+				3260CDFC1B582EA600CEA424 /* TrailStep.swift */,
+				3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -323,24 +347,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DD324C1B57D16600D97C70 /* TrailStepInfo.swift in Sources */,
+				32DD32481B57C47B00D97C70 /* TrailType.swift in Sources */,
 				32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */,
 				32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */,
 				3236E6441B529EBD00701D27 /* FMDatabaseVariadic.swift in Sources */,
 				32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */,
+				32DD32501B57DA8D00D97C70 /* Modes.swift in Sources */,
 				32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */,
 				3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */,
 				3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */,
 				3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */,
 				3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */,
 				325307211B540D8700D04297 /* ButtonType.swift in Sources */,
+				32DD324E1B57D30000D97C70 /* QuestionType.swift in Sources */,
+				32DD32461B57C41A00D97C70 /* TrailInfo.swift in Sources */,
+				3260CDFD1B582EA600CEA424 /* TrailStep.swift in Sources */,
 				32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */,
 				32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */,
 				320597EE1B55294D0034DF74 /* TrailManager.swift in Sources */,
+				3260CDFF1B5833EA00CEA424 /* QuestionManager.swift in Sources */,
 				325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */,
 				3236E63E1B529B8900701D27 /* FMResultSet.m in Sources */,
 				32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */,
 				327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */,
 				3236E63B1B529B8900701D27 /* FMDatabaseAdditions.m in Sources */,
+				32DD324A1B57CCA500D97C70 /* ArtefactInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
