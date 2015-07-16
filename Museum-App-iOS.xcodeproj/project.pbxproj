@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		320597EE1B55294D0034DF74 /* TrailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320597ED1B55294D0034DF74 /* TrailManager.swift */; };
+		320EE56C1B58478600201663 /* ArtefactImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320EE56B1B58478600201663 /* ArtefactImage.swift */; };
 		3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6301B529B8900701D27 /* FMDatabase.m */; };
 		3236E63B1B529B8900701D27 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6321B529B8900701D27 /* FMDatabaseAdditions.m */; };
 		3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6341B529B8900701D27 /* FMDatabasePool.m */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		320597ED1B55294D0034DF74 /* TrailManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailManager.swift; sourceTree = "<group>"; };
+		320EE56B1B58478600201663 /* ArtefactImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtefactImage.swift; sourceTree = "<group>"; };
 		3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Museum-App-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		3236E62F1B529B8900701D27 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		3236E6301B529B8900701D27 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				32DD324F1B57DA8D00D97C70 /* Modes.swift */,
 				3260CDFC1B582EA600CEA424 /* TrailStep.swift */,
 				3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */,
+				320EE56B1B58478600201663 /* ArtefactImage.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */,
 				3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */,
 				3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */,
+				320EE56C1B58478600201663 /* ArtefactImage.swift in Sources */,
 				325307211B540D8700D04297 /* ButtonType.swift in Sources */,
 				32DD324E1B57D30000D97C70 /* QuestionType.swift in Sources */,
 				32DD32461B57C41A00D97C70 /* TrailInfo.swift in Sources */,

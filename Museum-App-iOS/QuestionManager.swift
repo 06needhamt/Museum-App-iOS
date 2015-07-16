@@ -36,10 +36,55 @@ class QuestionManager: NSObject {
         case Int(QuestionType.MultiChoice.rawValue.value):
             // FIXME call multi choice
             break
+        case Int(QuestionType.Picture.rawValue.value):
+            // FIXME call picture
+            break
+        case Int(QuestionType.PictureMultiChoice.rawValue.value):
+            //FIXME call Picture Multi Choice
+            break
         default:
             NSLog("Invalid Question Type")
         }
-        return true
+        questionNum += 1
+        if(questionNum >= steps.count){
+            trailEnded = true
+        }
+        return trailEnded
     }
+    
+    internal func recieveData(score: Int) -> Int{
+        return score
+    }
+    
+    internal func hasTrailEnded() -> Bool{
+        return trailEnded
+    }
+    
+    internal func setHasTrailEnded(ended:Bool){
+        trailEnded = ended
+    }
+    
+    internal func getTrailSteps() -> [TrailStepInfo!]{
+        return steps
+    }
+    
+    internal func setTrailSteps(steps:[TrailStepInfo!]){
+        self.steps = steps
+    }
+    
+    internal func getQuestionNumber() -> Int{
+        return questionNum
+    }
+    
+    internal func setQuestionNumber(num:Int){
+        questionNum = num
+    }
+    
 }
+
+public func -=(left: Int64,right: Int64) -> Int64{
+        var result = left
+        result = result - right
+        return result
+    }
 
