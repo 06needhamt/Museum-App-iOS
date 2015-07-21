@@ -38,6 +38,7 @@
 		3260CDFF1B5833EA00CEA424 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */; };
 		327DDEF31B55179500908F64 /* museumDB in Resources */ = {isa = PBXBuildFile; fileRef = 327DDEF21B55179500908F64 /* museumDB */; };
 		327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DDEF41B551D2900908F64 /* BugsConentController.swift */; };
+		3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */; };
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
 		32DD32461B57C41A00D97C70 /* TrailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32451B57C41A00D97C70 /* TrailInfo.swift */; };
 		32DD32481B57C47B00D97C70 /* TrailType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32471B57C47B00D97C70 /* TrailType.swift */; };
@@ -100,6 +101,7 @@
 		3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
 		327DDEF21B55179500908F64 /* museumDB */ = {isa = PBXFileReference; lastKnownFileType = file; path = museumDB; sourceTree = "<group>"; };
 		327DDEF41B551D2900908F64 /* BugsConentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsConentController.swift; sourceTree = "<group>"; };
+		3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiChoiceController.swift; sourceTree = "<group>"; };
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
 		32DD32451B57C41A00D97C70 /* TrailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailInfo.swift; sourceTree = "<group>"; };
 		32DD32471B57C47B00D97C70 /* TrailType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailType.swift; sourceTree = "<group>"; };
@@ -184,19 +186,19 @@
 		32512C661B52727C00BC4ADC /* Museum-App-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				32512C671B52727C00BC4ADC /* Supporting Files */,
+				3236E6451B52A1D500701D27 /* Resources */,
 				3236E6471B52A1FD00701D27 /* FMDB */,
 				32512C691B52727C00BC4ADC /* AppDelegate.swift */,
 				32512C6B1B52727C00BC4ADC /* ViewController.swift */,
 				32512C6D1B52727C00BC4ADC /* Main.storyboard */,
 				32512C701B52727C00BC4ADC /* Images.xcassets */,
 				32512C721B52727C00BC4ADC /* LaunchScreen.xib */,
-				32512C671B52727C00BC4ADC /* Supporting Files */,
 				32512C891B52733000BC4ADC /* BottomButtonContainer.swift */,
 				32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */,
 				32512C8D1B52738800BC4ADC /* HomeViewController.swift */,
 				3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */,
 				3236E6411B529E3000701D27 /* DatabaseLoader.swift */,
-				3236E6451B52A1D500701D27 /* Resources */,
 				32904CEC1B52D068006699A8 /* AquariumContentController.swift */,
 				325E8D1E1B53BF50004A727F /* QRViewController.swift */,
 				325307201B540D8700D04297 /* ButtonType.swift */,
@@ -211,6 +213,7 @@
 				3260CDFC1B582EA600CEA424 /* TrailStep.swift */,
 				3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */,
 				320EE56B1B58478600201663 /* ArtefactImage.swift */,
+				3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */,
 				32DD32501B57DA8D00D97C70 /* Modes.swift in Sources */,
 				32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */,
+				3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */,
 				3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */,
 				3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */,
 				3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */,

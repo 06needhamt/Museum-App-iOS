@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class QuestionManager: NSObject {
     var steps:[TrailStepInfo!] = []
@@ -14,9 +15,11 @@ class QuestionManager: NSObject {
     var questionNum:Int = 0
     var answerNum:Int = 0
     var trailEnded:Bool = false
+    var maincontroller:HomeViewController!
     
-    required init(trailSteps:[TrailStepInfo!]){
+    required init(trailSteps:[TrailStepInfo!],home:HomeViewController!){
         steps = trailSteps
+        maincontroller = home
     }
     
     internal func nextQuestion() -> Bool{
@@ -80,11 +83,13 @@ class QuestionManager: NSObject {
         questionNum = num
     }
     
-}
-
-public func -=(left: Int64,right: Int64) -> Int64{
-        var result = left
-        result = result - right
-        return result
+    internal func callMultiChoice(identifier:String){
+        let multiChoiceController = MultiChoiceController(nibName: nil,bundle: nil)
+        let sourceViewController = maincontroller
+        multiChoiceController.setParentController(sourceViewController)
+        sourceViewController.presentViewController(multiChoiceController, animated:true, completion: nil)
+        
+        
     }
-
+    
+}

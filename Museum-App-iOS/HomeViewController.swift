@@ -22,6 +22,8 @@ internal class HomeViewController : UIViewController {
     @IBOutlet weak var QRContentContainer: UIView!
     @IBOutlet weak var BugsContentController: UIView!
     var containerViews:[(UIView!,String)] = [(nil,"")]
+    var questionManager:QuestionManager! = nil
+    var trailManager:TrailManager! = nil
     required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -45,16 +47,18 @@ internal class HomeViewController : UIViewController {
                 continue
             }
 //         containerViews.removeAll(keepCapacity: true)
-//         containerViews.append((AquariumContentController,"Aquarium"))// what the f**k apple why cant we add protocol object optionals to an array ???
+//         containerViews.append((AquariumContentController,"Aquarium")) // what the f**k apple why cant we add protocol object optionals to an array ???
         }
         TopButtonsController?.parent = self
         BottomButtonsController?.parent = self
-        
+        questionManager = instantiateQuestionManager()
+        trailManager = instantiateTrailManager()
         NSLog("Home View Controller Loaded")
         self.MainContentContainer.hidden = false
         self.AquariumContentController.hidden = true
         self.QRContentContainer.hidden = true
         self.BugsContentController.hidden = true
+        questionManager.callMultiChoice(NSStringFromClass(self.classForCoder) as String)
     }
     
     override internal func didReceiveMemoryWarning() {
@@ -62,6 +66,14 @@ internal class HomeViewController : UIViewController {
         delete(contentController)
         delete(TopButtonsController)
         delete(BottomButtonsController)
+    }
+    
+    internal func instantiateQuestionManager() -> QuestionManager!{
+        return QuestionManager(trailSteps: [], home: self);
+    }
+    
+    internal func instantiateTrailManager() -> TrailManager!{
+        return TrailManager.getInstance()
     }
     
    
