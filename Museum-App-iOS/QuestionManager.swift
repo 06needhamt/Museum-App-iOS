@@ -16,6 +16,9 @@ class QuestionManager: NSObject {
     var answerNum:Int = 0
     var trailEnded:Bool = false
     var maincontroller:HomeViewController!
+    private var multiChoiceController:MultiChoiceController!
+    private let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+
     
     required init(trailSteps:[TrailStepInfo!],home:HomeViewController!){
         steps = trailSteps
@@ -37,7 +40,7 @@ class QuestionManager: NSObject {
             break
             
         case Int(QuestionType.MultiChoice.rawValue.value):
-            // FIXME call multi choice
+            callMultiChoice("multiChoiceController")
             break
         case Int(QuestionType.Picture.rawValue.value):
             // FIXME call picture
@@ -83,12 +86,28 @@ class QuestionManager: NSObject {
         questionNum = num
     }
     
-    internal func callMultiChoice(identifier:String){
-        let multiChoiceController = MultiChoiceController(nibName: nil,bundle: nil)
+    internal func callMultiChoice(identifier:String){ // now thats what i call a call bridge
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        multiChoiceController = (storyBoard.instantiateViewControllerWithIdentifier(identifier)) as! MultiChoiceController?
+        if(multiChoiceController == nil){
+            NSLog("Multi Choice Controller = NIL")
+            return
+        }
         let sourceViewController = maincontroller
-        multiChoiceController.setParentController(sourceViewController)
-        sourceViewController.presentViewController(multiChoiceController, animated:true, completion: nil)
+        if(sourceViewController == nil){
+            NSLog("Source view controller == NIL")
+            return
+        }
+        multiChoiceController!.setParentController(sourceViewController)
+        multiChoiceController.setQuestionManager(self)
+        sourceViewController.presentViewController(multiChoiceController!, animated: true, completion: nil)
+        appDelegate.window?.rootViewController = multiChoiceController        
         
+    }
+    
+    internal func dismiss(controller:UIViewController){
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        appDelegate.window?.rootViewController = maincontroller
         
     }
     

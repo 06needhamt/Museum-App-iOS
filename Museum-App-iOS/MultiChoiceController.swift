@@ -10,31 +10,26 @@ import UIKit
 
 class MultiChoiceController: UIViewController {
     
-    var parent:HomeViewController!
+    private var parent:HomeViewController!
+    private var manager:QuestionManager!
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
+    @IBOutlet weak var Dismiss: UIButton!
 
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        //fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         parent = getParentController()
-        
+        NSLog("MultiChoiceController Loaded")
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
 
     internal func getParentController() -> HomeViewController{
@@ -43,5 +38,17 @@ class MultiChoiceController: UIViewController {
     
     internal func setParentController(controller:HomeViewController){
         parent = controller
+    }
+    @IBAction func DismissClicked(sender: UIButton) {
+        manager.dismiss(self as UIViewController)
+        NSLog("Controller Dismissed")
+    }
+    
+    internal func setQuestionManager(manager:QuestionManager!){
+        self.manager = manager
+    }
+    
+    internal func getQuestionManager() -> QuestionManager!{
+        return manager
     }
 }
