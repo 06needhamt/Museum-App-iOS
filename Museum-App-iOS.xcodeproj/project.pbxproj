@@ -21,6 +21,9 @@
 		3236E64E1B52A27B00701D27 /* merge12547865245154.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3236E6491B52A27B00701D27 /* merge12547865245154.txt */; };
 		3236E64F1B52A27B00701D27 /* Museum Images in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64A1B52A27B00701D27 /* Museum Images */; };
 		3236E6511B52A27B00701D27 /* webpages in Resources */ = {isa = PBXBuildFile; fileRef = 3236E64C1B52A27B00701D27 /* webpages */; };
+		3241D0C11B6173ED00E21807 /* JLToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241D0BE1B6173ED00E21807 /* JLToast.swift */; };
+		3241D0C21B6173ED00E21807 /* JLToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241D0BF1B6173ED00E21807 /* JLToastCenter.swift */; };
+		3241D0C31B6173ED00E21807 /* JLToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241D0C01B6173ED00E21807 /* JLToastView.swift */; };
 		32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C691B52727C00BC4ADC /* AppDelegate.swift */; };
 		32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C6B1B52727C00BC4ADC /* ViewController.swift */; };
 		32512C6F1B52727C00BC4ADC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32512C6D1B52727C00BC4ADC /* Main.storyboard */; };
@@ -80,6 +83,10 @@
 		3236E6491B52A27B00701D27 /* merge12547865245154.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = merge12547865245154.txt; sourceTree = "<group>"; };
 		3236E64A1B52A27B00701D27 /* Museum Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Museum Images"; sourceTree = "<group>"; };
 		3236E64C1B52A27B00701D27 /* webpages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = webpages; sourceTree = "<group>"; };
+		3241D0BD1B6173ED00E21807 /* JLToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLToast.h; sourceTree = "<group>"; };
+		3241D0BE1B6173ED00E21807 /* JLToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToast.swift; sourceTree = "<group>"; };
+		3241D0BF1B6173ED00E21807 /* JLToastCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastCenter.swift; sourceTree = "<group>"; };
+		3241D0C01B6173ED00E21807 /* JLToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastView.swift; sourceTree = "<group>"; };
 		32512C641B52727C00BC4ADC /* Museum-App-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Museum-App-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32512C681B52727C00BC4ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32512C691B52727C00BC4ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +170,17 @@
 			name = FMDB;
 			sourceTree = "<group>";
 		};
+		3241D0BC1B6173ED00E21807 /* JLToast */ = {
+			isa = PBXGroup;
+			children = (
+				3241D0BD1B6173ED00E21807 /* JLToast.h */,
+				3241D0BE1B6173ED00E21807 /* JLToast.swift */,
+				3241D0BF1B6173ED00E21807 /* JLToastCenter.swift */,
+				3241D0C01B6173ED00E21807 /* JLToastView.swift */,
+			);
+			path = JLToast;
+			sourceTree = "<group>";
+		};
 		32512C5B1B52727C00BC4ADC = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +204,7 @@
 		32512C661B52727C00BC4ADC /* Museum-App-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3241D0BC1B6173ED00E21807 /* JLToast */,
 				32512C671B52727C00BC4ADC /* Supporting Files */,
 				3236E6451B52A1D500701D27 /* Resources */,
 				3236E6471B52A1FD00701D27 /* FMDB */,
@@ -357,9 +376,11 @@
 				32DD32481B57C47B00D97C70 /* TrailType.swift in Sources */,
 				32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */,
 				32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */,
+				3241D0C11B6173ED00E21807 /* JLToast.swift in Sources */,
 				3236E6441B529EBD00701D27 /* FMDatabaseVariadic.swift in Sources */,
 				32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */,
 				32DD32501B57DA8D00D97C70 /* Modes.swift in Sources */,
+				3241D0C21B6173ED00E21807 /* JLToastCenter.swift in Sources */,
 				32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */,
 				3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */,
 				3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */,
@@ -373,6 +394,7 @@
 				3260CDFD1B582EA600CEA424 /* TrailStep.swift in Sources */,
 				32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */,
 				32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */,
+				3241D0C31B6173ED00E21807 /* JLToastView.swift in Sources */,
 				320597EE1B55294D0034DF74 /* TrailManager.swift in Sources */,
 				3260CDFF1B5833EA00CEA424 /* QuestionManager.swift in Sources */,
 				325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */,

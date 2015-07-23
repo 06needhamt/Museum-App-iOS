@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 THOMAS NEEDHAM. All rights reserved.
 //
 
+// uses https://github.com/tejas123/implement-Toast-Message-in-iOS-using-Swift
+
 import UIKit
 
 class MultiChoiceController: UIViewController {
@@ -24,7 +26,7 @@ class MultiChoiceController: UIViewController {
     private var trailPositionField:UITextView!
     private let MAX_SCORE:Int = 100
     private var endTrail:Bool = false
-    private var scoreForThisQuestion:Int = 0
+    private var scoreForThisQuestion:Int = 100
     private var totalScore:Int = 0
     private var question = ""
     private var answers:[String] = []
@@ -44,6 +46,8 @@ class MultiChoiceController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         parent = getParentController()
+        applyAnswers("Correct Answer")
+        theOldSwitcheroo()
         if(!setupViews()){
             fatalError("Unable To Load Question " + String(currentPosition))
             return
@@ -91,7 +95,7 @@ class MultiChoiceController: UIViewController {
         questionField.textColor = UIColor.whiteColor()
         questionField.backgroundColor = UIColor(white: 1, alpha: 0.0) // transparent colour
         //-------------------------------------
-        trailPositionField = UITextView(frame: CGRect(x: screenWidth * 0.5, y: CGFloat(10.0), width: screenWidth, height: screenHeight))
+        trailPositionField = UITextView(frame: CGRect(x: screenWidth * 0.4, y: CGFloat(10.0), width: screenWidth, height: screenHeight))
         let trailposition = String("Question : ").stringByAppendingString(String(currentPosition)).stringByAppendingString(" Of ").stringByAppendingString(String(trailLength))
         trailPositionField.text = trailposition
         trailPositionField.sizeToFit()
@@ -99,9 +103,8 @@ class MultiChoiceController: UIViewController {
         trailPositionField.textColor = UIColor.whiteColor()
         trailPositionField.backgroundColor = UIColor(white: 1, alpha: 0.0) // transparent colour
         //------------------------------------
-        ScoreField = UITextView(frame: CGRect(x: screenWidth * 0.8, y: CGFloat(10.0), width: screenWidth, height: screenHeight))
+        ScoreField = UITextView(frame: CGRect(x: screenWidth * 0.7, y: CGFloat(10.0), width: screenWidth * 0.2, height: screenHeight * 0.05))
         ScoreField.text = String("Score: ").stringByAppendingString(String(totalScore))
-        ScoreField.sizeToFit()
         ScoreField.editable = false
         ScoreField.textColor = UIColor.whiteColor()
         ScoreField.backgroundColor = UIColor(white: 1, alpha: 0.0) // transparent colour
@@ -112,7 +115,7 @@ class MultiChoiceController: UIViewController {
         //------------------------------------
         buttonA = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.4, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonA.tag = 0
-        buttonA.setTitle("Test Answer", forState: UIControlState.Normal)
+        buttonA.setTitle(answers[0], forState: UIControlState.Normal)
         buttonA.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         buttonA.backgroundColor = UIColor.whiteColor()
         buttonA.titleLabel?.textAlignment = NSTextAlignment.Center
@@ -123,7 +126,7 @@ class MultiChoiceController: UIViewController {
         
         buttonB = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.5, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonB.tag = 1
-        buttonB.setTitle("Test Answer", forState: UIControlState.Normal)
+        buttonB.setTitle(answers[1], forState: UIControlState.Normal)
         buttonB.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         buttonB.backgroundColor = UIColor.whiteColor()
         buttonB.titleLabel?.textAlignment = NSTextAlignment.Center
@@ -135,7 +138,7 @@ class MultiChoiceController: UIViewController {
         //------------------------------------
         buttonC = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.6, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonC.tag = 2
-        buttonC.setTitle("Test Answer", forState: UIControlState.Normal)
+        buttonC.setTitle(answers[2], forState: UIControlState.Normal)
         buttonC.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         buttonC.backgroundColor = UIColor.whiteColor()
         buttonC.titleLabel?.textAlignment = NSTextAlignment.Center
@@ -147,7 +150,7 @@ class MultiChoiceController: UIViewController {
         //------------------------------------
         buttonD = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.7, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonD.tag = 3
-        buttonD.setTitle("Test Answer", forState: UIControlState.Normal)
+        buttonD.setTitle(answers[3], forState: UIControlState.Normal)
         buttonD.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         buttonD.backgroundColor = UIColor.whiteColor()
         buttonD.titleLabel?.textAlignment = NSTextAlignment.Center
@@ -179,10 +182,23 @@ class MultiChoiceController: UIViewController {
         }
         answers = tempy
     }
-    
+    private func checkAnswer(buttonTag:Int){
+        let answer:String = answerButtons[buttonTag].currentTitle!
+        if(answer == correctAnswer){
+            answerButtons[buttonTag].backgroundColor = UIColor.greenColor()
+            JLToast.makeText("Correct Answer Well Done").show()
+            updateScore(totalScore + scoreForThisQuestion)
+        }
+        else{
+            answerButtons[buttonTag].backgroundColor = UIColor.redColor()
+            DecrementGuesses(buttonTag)
+            JLToast.makeText("Incorrect Answer Try Again").show()
+        }
+    }
     func AnswerButtonClicked(sender:UIButton!){
+        
         NSLog("Button %i clicked", sender.tag)
-        answerButtons[sender.tag].enabled = false
+        checkAnswer(sender.tag)
     }
     
     func SkipButtonClicked(){
@@ -201,6 +217,7 @@ class MultiChoiceController: UIViewController {
     private func applyAnswers(tempy:String){
         var templist:[String] = tempy.componentsSeparatedByString(",")
         answers = templist
+        correctAnswer = answers[0]
         while(answers.count < 4){
             answers.append("MISSING ANSWER")
         }
@@ -230,5 +247,26 @@ class MultiChoiceController: UIViewController {
         }))
         self.presentViewController(dialog, animated: true, completion: nil)
     }
+    
+    private func DecrementGuesses(buttonTag:Int){
+        scoreForThisQuestion -= MAX_SCORE / 4
+        if(scoreForThisQuestion <= 0){
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        answerButtons[buttonTag].enabled = false
+    }
+    
+    private func enableAllButtons(){
+        for var i = 0; i < answerButtons.count; i+=1{
+            answerButtons[i].enabled = true
+        }
+        skipButton.enabled = true
+    }
+    private func disableAllButtons(){
+        for var i = 0; i < answerButtons.count; i+=1{
+            answerButtons[i].enabled = false
+        }
+    }
+    
 }
 
