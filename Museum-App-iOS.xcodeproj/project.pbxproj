@@ -39,6 +39,7 @@
 		325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E8D1E1B53BF50004A727F /* QRViewController.swift */; };
 		3260CDFD1B582EA600CEA424 /* TrailStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260CDFC1B582EA600CEA424 /* TrailStep.swift */; };
 		3260CDFF1B5833EA00CEA424 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */; };
+		327CB7D91B62393800801547 /* SingleAnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327CB7D81B62393800801547 /* SingleAnswerController.swift */; };
 		327DDEF31B55179500908F64 /* museumDB in Resources */ = {isa = PBXBuildFile; fileRef = 327DDEF21B55179500908F64 /* museumDB */; };
 		327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DDEF41B551D2900908F64 /* BugsConentController.swift */; };
 		3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */; };
@@ -106,6 +107,7 @@
 		325E8D1E1B53BF50004A727F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		3260CDFC1B582EA600CEA424 /* TrailStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailStep.swift; sourceTree = "<group>"; };
 		3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		327CB7D81B62393800801547 /* SingleAnswerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleAnswerController.swift; sourceTree = "<group>"; };
 		327DDEF21B55179500908F64 /* museumDB */ = {isa = PBXFileReference; lastKnownFileType = file; path = museumDB; sourceTree = "<group>"; };
 		327DDEF41B551D2900908F64 /* BugsConentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsConentController.swift; sourceTree = "<group>"; };
 		3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiChoiceController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */,
 				320EE56B1B58478600201663 /* ArtefactImage.swift */,
 				3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */,
+				327CB7D81B62393800801547 /* SingleAnswerController.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */,
 				3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */,
 				3236E63A1B529B8900701D27 /* FMDatabase.m in Sources */,
+				327CB7D91B62393800801547 /* SingleAnswerController.swift in Sources */,
 				3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */,
 				3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */,
 				320EE56C1B58478600201663 /* ArtefactImage.swift in Sources */,

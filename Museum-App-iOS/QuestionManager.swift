@@ -17,6 +17,7 @@ class QuestionManager: NSObject {
     var trailEnded:Bool = false
     var maincontroller:HomeViewController!
     private var multiChoiceController:MultiChoiceController!
+    private var singleAnswerController:SingleAnswerController!
     private let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
 
     
@@ -36,7 +37,7 @@ class QuestionManager: NSObject {
         
         switch(Int(question.getQuestionType().rawValue.value)){ // wtf why cant we use Int64 in switch case so we have to pointlessly cast to int first what the f**k
         case Int(QuestionType.Normal.rawValue.value):
-            // FIXME call single answer
+            callSingleAnswer("singleAnswerController")
             break
             
         case Int(QuestionType.MultiChoice.rawValue.value):
@@ -105,11 +106,28 @@ class QuestionManager: NSObject {
         
     }
     
+    internal func callSingleAnswer(identifier:String){
+        let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        singleAnswerController = (storyBoard.instantiateViewControllerWithIdentifier(identifier)) as! SingleAnswerController?
+        if(singleAnswerController == nil){
+            NSLog("Single Answer Controller == NIL")
+            return
+        }
+        let sourceViewController = maincontroller
+        if(sourceViewController == nil){
+            NSLog("Source View Controller == NIL")
+            return
+        }
+        singleAnswerController!.SetParent(sourceViewController)
+        singleAnswerController.SetQuestionManager(self)
+        sourceViewController.presentViewController(singleAnswerController!, animated: true, completion: nil)
+        appDelegate.window?.rootViewController = singleAnswerController
+    }
+
+
     internal func dismiss(controller:UIViewController){
         controller.dismissViewControllerAnimated(true, completion: nil)
         appDelegate.window?.rootViewController = maincontroller
-        
+
     }
-    
-    
 }
