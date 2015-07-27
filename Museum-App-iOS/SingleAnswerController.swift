@@ -34,6 +34,8 @@ class SingleAnswerController: UIViewController {
     var currentPosition:Int = 0
     var trailLength:Int = 0
     var trailScore:Int = 0
+    var skipped:Bool = false
+    var trailEnded:Bool = false
     
     required init(coder aDecoder:NSCoder){
         super.init(coder: aDecoder)
@@ -101,11 +103,29 @@ class SingleAnswerController: UIViewController {
         return true
         
     }
-    func SkipButtonClicked(sender:UIButton!){
+    func SkipButtonClicked(){
         NSLog("Skipping Question")
+        skipped = true
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
         manager.nextQuestion()
     }
-    func NextButtonClicked(sender:UIButton!){
+    
+    func NextButtonClicked(){
+        //NSLog("Skipping Question")
+        skipped = false
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
         manager.nextQuestion()
     }
     
@@ -114,7 +134,7 @@ class SingleAnswerController: UIViewController {
         
         dialog.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: {
             action in
-            self.SkipButtonClicked(sender)
+            self.SkipButtonClicked()
         }))
         dialog.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: {
             action in
@@ -144,6 +164,11 @@ class SingleAnswerController: UIViewController {
     
     internal func SetQuestionManager(manager:QuestionManager){
         self.manager = manager
+    }
+    
+    private func passData(){
+        let result:QuestionResult! = QuestionResult(score: scoreForThisQuestion, endofTrail: trailEnded, skipped: skipped)
+        parent.SetLastQuestionResult(result)
     }
 
 }

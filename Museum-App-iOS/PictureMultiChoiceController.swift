@@ -38,6 +38,8 @@ class PictureMultiChoiceController: UIViewController {
     var trailLength:Int = 0
     var trailScore:Int = 0
     var answers:[String] = []
+    var skipped:Bool = false
+    var trailEnded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -201,6 +203,14 @@ class PictureMultiChoiceController: UIViewController {
     
     func SkipButtonClicked(){
         NSLog("Skipping Question")
+        skipped = true
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
         manager.nextQuestion()
     }
     
@@ -222,8 +232,18 @@ class PictureMultiChoiceController: UIViewController {
     }
     
     func NextButtonClicked(sender:UIButton!){
+        skipped = false
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
         manager.nextQuestion()
+        
     }
+    
     private func createNextButton(){
         skipButton.setTitle("Next", forState: UIControlState.Normal)
         skipButton.removeTarget(self, action: "ShowSkipDialog:", forControlEvents: UIControlEvents.TouchDown)
@@ -264,6 +284,11 @@ class PictureMultiChoiceController: UIViewController {
         for var i = 0; i < answerButtons.count; i+=1{
             answerButtons[i].enabled = false
         }
+    }
+    
+    private func passData(){
+        let result:QuestionResult! = QuestionResult(score: scoreForThisQuestion, endofTrail: trailEnded, skipped: skipped)
+        parent.SetLastQuestionResult(result)
     }
 }
 

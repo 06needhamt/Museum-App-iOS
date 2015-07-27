@@ -35,6 +35,8 @@ class PictureQuestionController: UIViewController {
     var currentPosition:Int = 0
     var trailLength:Int = 0
     var trailScore:Int = 0
+    var skipped:Bool = false
+    var trailEnded:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,5 +128,37 @@ class PictureQuestionController: UIViewController {
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         return scaledImage
     }
+    
+    func SkipButtonClicked(){
+        NSLog("Skipping Question")
+        skipped = true
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
+        manager.nextQuestion()
+    }
+    
+    func NextButtonClicked(sender:UIButton!){
+        skipped = false
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
+        manager.nextQuestion()
+        
+    }
+    
+    private func passData(){
+        let result:QuestionResult! = QuestionResult(score: scoreForThisQuestion, endofTrail: trailEnded, skipped: skipped)
+        parent.SetLastQuestionResult(result)
+    }
+    
     
 }

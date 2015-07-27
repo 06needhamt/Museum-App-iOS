@@ -35,6 +35,8 @@ class MultiChoiceController: UIViewController {
     private var currentPosition:Int = 0
     private var trailLength = 0
     private var skipButton:UIButton!
+    private var skipped:Bool = false
+    private var trailEnded:Bool = false
     
     @IBOutlet weak var BackgroundImage: UIImageView!
     
@@ -202,6 +204,14 @@ class MultiChoiceController: UIViewController {
     
     func SkipButtonClicked(){
         NSLog("Skipping Question")
+        skipped = true
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
         manager.nextQuestion()
     }
     
@@ -223,7 +233,16 @@ class MultiChoiceController: UIViewController {
     }
     
     func NextButtonClicked(sender:UIButton!){
+        skipped = false
+        if(currentPosition == trailLength){
+            trailEnded = true
+        }
+        else{
+            trailEnded = false
+        }
+        passData()
         manager.nextQuestion()
+
     }
     private func createNextButton(){
         skipButton.setTitle("Next", forState: UIControlState.Normal)
@@ -265,6 +284,11 @@ class MultiChoiceController: UIViewController {
         for var i = 0; i < answerButtons.count; i+=1{
             answerButtons[i].enabled = false
         }
+    }
+    
+    private func passData(){
+        let result:QuestionResult! = QuestionResult(score: scoreForThisQuestion, endofTrail: trailEnded, skipped: skipped)
+        parent.SetLastQuestionResult(result)
     }
     
 }

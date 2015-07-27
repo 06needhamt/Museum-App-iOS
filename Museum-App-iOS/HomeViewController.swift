@@ -24,6 +24,9 @@ internal class HomeViewController : UIViewController {
     var containerViews:[(UIView!,String)] = [(nil,"")]
     var questionManager:QuestionManager! = nil
     var trailManager:TrailManager! = nil
+    var lastQuestionResult:QuestionResult! = nil
+    var questionResults:[QuestionResult!] = []
+    
     required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -77,6 +80,23 @@ internal class HomeViewController : UIViewController {
     
     internal func instantiateTrailManager() -> TrailManager!{
         return TrailManager.getInstance()
+    }
+    
+    internal func SetLastQuestionResult(result:QuestionResult!){
+        lastQuestionResult = result
+        questionResults.append(result)
+    }
+    
+    internal func getLastQuestionResult() -> QuestionResult!{
+        return lastQuestionResult
+    }
+    
+    internal func SetQuestionResults(results:[QuestionResult!]){
+        questionResults = results
+    }
+    
+    internal func getQuestionResults() -> [QuestionResult!]{
+        return questionResults
     }
     
    
