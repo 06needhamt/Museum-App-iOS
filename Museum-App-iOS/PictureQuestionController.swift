@@ -1,18 +1,19 @@
 //
-//  SingleAnswerController.swift
+//  PictureQuestionController.swift
 //  Museum-App-iOS
 //
-//  Created by THOMAS NEEDHAM on 24/07/2015.
+//  Created by THOMAS NEEDHAM on 27/07/2015.
 //  Copyright (c) 2015 THOMAS NEEDHAM. All rights reserved.
 //
 
 import UIKit
 
-class SingleAnswerController: UIViewController {
-
-    @IBOutlet weak var BackgroundImage: UIImageView!
-    var parent:HomeViewController!
+class PictureQuestionController: UIViewController {
+    
+    @IBOutlet weak var Background: UIImageView!
+    //@IBOutlet weak var text: UITextView!
     var manager:QuestionManager!
+    var parent:HomeViewController!
     let MAX_SCORE:Int = 100
     var scoreForThisQuestion:Int = 0
     var totalScore:Int = 0
@@ -20,7 +21,7 @@ class SingleAnswerController: UIViewController {
     var screenWidth:CGFloat = 0.0
     var QRButton:UIButton!
     var skipButton:UIButton!
-    var questionField:UITextView!
+    var questionField:UIImageView!
     var scoreField:UITextView!
     var trailPositionField:UITextView!
     var validatedContent:String = ""
@@ -35,10 +36,6 @@ class SingleAnswerController: UIViewController {
     var trailLength:Int = 0
     var trailScore:Int = 0
     
-    required init(coder aDecoder:NSCoder){
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         scoreForThisQuestion = MAX_SCORE
@@ -48,13 +45,13 @@ class SingleAnswerController: UIViewController {
             fatalError("Could Not load Question")
         }
         
-        NSLog("Single Answer controller loaded")
+        NSLog("Picture Question controller loaded")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
     
     private func setupViews() -> Bool{
         QRButton = UIButton(frame: CGRect(x: screenWidth / 2, y: screenHeight / 2, width: screenWidth, height: screenHeight))
@@ -73,14 +70,15 @@ class SingleAnswerController: UIViewController {
         skipButton.addTarget(self, action: "SkipButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
         self.view.addSubview(skipButton)
         //----------------------------------
-        questionField = UITextView(frame: CGRect(x: CGFloat(0.0), y: screenHeight * 0.1, width: screenWidth, height: screenHeight))
-        questionField.text = "Sample Question"
-        questionField.textAlignment = NSTextAlignment.Center
-        questionField.sizeToFit()
-        questionField.frame = CGRect(x: CGFloat(0.0), y: screenHeight * 0.1, width: screenWidth, height: questionField.frame.height)
-        questionField.editable = false
-        questionField.textColor = UIColor.whiteColor()
+        questionField = UIImageView(frame: CGRect(x: screenWidth * 0.25, y: screenHeight * 0.1, width: screenWidth, height: screenHeight))
+        let imagePath = NSBundle.mainBundle().pathForResource("images/46_rocks", ofType: ".jpg")!
+        questionField.image = imageResize(image: UIImage(contentsOfFile: imagePath)!, sizeChange: CGSize(width: 200, height: 200))
+        if(questionField.image == nil){
+            NSLog("Image == NIL")
+        }
         questionField.backgroundColor = UIColor(white: 1, alpha: 0)
+        questionField.sizeToFit()
+        self.view.addSubview(questionField)
         //----------------------------------
         trailPositionField = UITextView(frame:CGRect(x: screenWidth * 0.4, y: CGFloat(10.0), width: screenWidth, height: screenHeight))
         let trailPosition = String("Question : ").stringByAppendingString(String(currentPosition).stringByAppendingString(" Of ").stringByAppendingString(String(trailLength)))
@@ -99,51 +97,34 @@ class SingleAnswerController: UIViewController {
         self.view.addSubview(scoreField)
         //----------------------------------
         return true
-        
-    }
-    func SkipButtonClicked(sender:UIButton!){
-        NSLog("Skipping Question")
-        manager.nextQuestion()
-    }
-    func NextButtonClicked(sender:UIButton!){
-        manager.nextQuestion()
     }
     
-    func showSkipDialog(sender:UIButton!){
-        let dialog = UIAlertController(title: "Skip This Question?", message: "Are You Sure You Want To Skip This Question?", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        dialog.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: {
-            action in
-            self.SkipButtonClicked(sender)
-        }))
-        dialog.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: {
-            action in
-            NSLog("Not Skipping Question")
-        }))
-        self.presentViewController(dialog, animated: true, completion: nil)
-    }
-    private func createNextButton(){
-        skipButton.setTitle("Next", forState: UIControlState.Normal)
-        skipButton.removeTarget(self, action: "SkipButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
-        skipButton.addTarget(self, action: "NextButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
-    }
-    func QRButtonClicked(sender:UIButton!){
-        NSLog("QR Button Clicked")
-    }
-    internal func SetParent(parent:HomeViewController){
-        self.parent = parent
-    }
-    
-    internal func GetParent() -> HomeViewController!{
+    internal func getParent() -> HomeViewController!{
         return self.parent
     }
     
-    internal func GetQuestionManager() -> QuestionManager!{
+    internal func SetParent(parent:HomeViewController!){
+        self.parent = parent
+    }
+    
+    internal func getQuestionManager() -> QuestionManager!{
         return self.manager
     }
     
-    internal func SetQuestionManager(manager:QuestionManager){
+    internal func setQuestionManager(manager:QuestionManager!){
         self.manager = manager
     }
-
+    
+    func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
+        
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        image.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        return scaledImage
+    }
+    
 }

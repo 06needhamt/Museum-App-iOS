@@ -18,6 +18,8 @@ class QuestionManager: NSObject {
     var maincontroller:HomeViewController!
     private var multiChoiceController:MultiChoiceController!
     private var singleAnswerController:SingleAnswerController!
+    private var pictureQuestionController:PictureQuestionController!
+    private var pictureMultiChoiceController:PictureMultiChoiceController!
     private let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
 
     
@@ -44,10 +46,10 @@ class QuestionManager: NSObject {
             callMultiChoice("multiChoiceController")
             break
         case Int(QuestionType.Picture.rawValue.value):
-            // FIXME call picture
+            callPictureQuestion("pictureQuestionController")
             break
         case Int(QuestionType.PictureMultiChoice.rawValue.value):
-            //FIXME call Picture Multi Choice
+            
             break
         default:
             NSLog("Invalid Question Type")
@@ -122,6 +124,43 @@ class QuestionManager: NSObject {
         singleAnswerController.SetQuestionManager(self)
         sourceViewController.presentViewController(singleAnswerController!, animated: true, completion: nil)
         appDelegate.window?.rootViewController = singleAnswerController
+    }
+    
+    internal func callPictureQuestion(identifier:String){
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        pictureQuestionController = (storyboard.instantiateViewControllerWithIdentifier(identifier)) as! PictureQuestionController?
+        if(pictureQuestionController == nil){
+            NSLog("PictureQuestionController == NIL")
+            return
+        }
+        let sourceViewController = maincontroller
+        if(sourceViewController == nil){
+            NSLog("PictureQuestionController == NIL")
+            return
+        }
+        pictureQuestionController!.SetParent(sourceViewController)
+        pictureQuestionController.setQuestionManager(self)
+        sourceViewController.presentViewController(pictureQuestionController!, animated: true, completion: nil)
+        appDelegate.window?.rootViewController = pictureQuestionController
+        
+    }
+    
+    internal func callPictureMultiChoice(identifier:String){
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        pictureMultiChoiceController = (storyboard.instantiateViewControllerWithIdentifier(identifier)) as! PictureMultiChoiceController?
+        if(pictureMultiChoiceController == nil){
+            NSLog("pictureMultiChoiceController == NIL")
+            return
+        }
+        let sourceViewController = maincontroller
+        if(sourceViewController == nil){
+            NSLog("pictureMultiChoiceController == NIL")
+            return
+        }
+        pictureMultiChoiceController!.SetParent(sourceViewController)
+        pictureMultiChoiceController.setQuestionManager(self)
+        sourceViewController.presentViewController(pictureMultiChoiceController!, animated: true, completion: nil)
+        appDelegate.window?.rootViewController = pictureMultiChoiceController
     }
 
 

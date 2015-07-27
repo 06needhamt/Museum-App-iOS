@@ -59,7 +59,9 @@ internal class HomeViewController : UIViewController {
         self.QRContentContainer.hidden = true
         self.BugsContentController.hidden = true
         //questionManager.callMultiChoice("multiChoiceController")
-        questionManager.callSingleAnswer("singleAnswerController")
+        //questionManager.callSingleAnswer("singleAnswerController")
+        //questionManager.callPictureQuestion("pictureQuestionController")
+        //questionManager.callPictureMultiChoice("pictureMultiChoiceController")
     }
     
     override internal func didReceiveMemoryWarning() {

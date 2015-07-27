@@ -44,6 +44,8 @@
 		327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DDEF41B551D2900908F64 /* BugsConentController.swift */; };
 		3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */; };
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
+		32DAA7031B66712A001CD0AD /* PictureQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */; };
+		32DAA7051B667CEC001CD0AD /* PictureMultiChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */; };
 		32DD32461B57C41A00D97C70 /* TrailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32451B57C41A00D97C70 /* TrailInfo.swift */; };
 		32DD32481B57C47B00D97C70 /* TrailType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32471B57C47B00D97C70 /* TrailType.swift */; };
 		32DD324A1B57CCA500D97C70 /* ArtefactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD32491B57CCA500D97C70 /* ArtefactInfo.swift */; };
@@ -112,6 +114,8 @@
 		327DDEF41B551D2900908F64 /* BugsConentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsConentController.swift; sourceTree = "<group>"; };
 		3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiChoiceController.swift; sourceTree = "<group>"; };
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
+		32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureQuestionController.swift; sourceTree = "<group>"; };
+		32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureMultiChoiceController.swift; sourceTree = "<group>"; };
 		32DD32451B57C41A00D97C70 /* TrailInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailInfo.swift; sourceTree = "<group>"; };
 		32DD32471B57C47B00D97C70 /* TrailType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailType.swift; sourceTree = "<group>"; };
 		32DD32491B57CCA500D97C70 /* ArtefactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtefactInfo.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				320EE56B1B58478600201663 /* ArtefactImage.swift */,
 				3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */,
 				327CB7D81B62393800801547 /* SingleAnswerController.swift */,
+				32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */,
+				32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				32DD324C1B57D16600D97C70 /* TrailStepInfo.swift in Sources */,
 				32DD32481B57C47B00D97C70 /* TrailType.swift in Sources */,
 				32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */,
+				32DAA7051B667CEC001CD0AD /* PictureMultiChoiceController.swift in Sources */,
 				32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */,
 				3241D0C11B6173ED00E21807 /* JLToast.swift in Sources */,
 				3236E6441B529EBD00701D27 /* FMDatabaseVariadic.swift in Sources */,
@@ -391,6 +398,7 @@
 				327CB7D91B62393800801547 /* SingleAnswerController.swift in Sources */,
 				3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */,
 				3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */,
+				32DAA7031B66712A001CD0AD /* PictureQuestionController.swift in Sources */,
 				320EE56C1B58478600201663 /* ArtefactImage.swift in Sources */,
 				325307211B540D8700D04297 /* ButtonType.swift in Sources */,
 				32DD324E1B57D30000D97C70 /* QuestionType.swift in Sources */,

@@ -1,118 +1,65 @@
 //
-//  MultiChoiceController.swift
+//  PictureMultiChoiceController.swift
 //  Museum-App-iOS
 //
-//  Created by THOMAS NEEDHAM on 21/07/2015.
+//  Created by THOMAS NEEDHAM on 27/07/2015.
 //  Copyright (c) 2015 THOMAS NEEDHAM. All rights reserved.
 //
 
-// uses https://github.com/tejas123/implement-Toast-Message-in-iOS-using-Swift
-
 import UIKit
 
-class MultiChoiceController: UIViewController {
-    
-    private var parent:HomeViewController!
-    private var manager:QuestionManager!
-    private var screenHeight:CGFloat = 0
-    private var screenWidth:CGFloat = 0
-    private var buttonA:UIButton!
-    private var buttonB:UIButton!
-    private var buttonC:UIButton!
-    private var buttonD:UIButton!
-    private var answerButtons:[UIButton!] = []
-    private var questionField:UITextView!
-    private var ScoreField:UITextView!
-    private var trailPositionField:UITextView!
-    private let MAX_SCORE:Int = 100
-    private var endTrail:Bool = false
-    private var scoreForThisQuestion:Int = 100
-    private var totalScore:Int = 0
-    private var question = ""
-    private var answers:[String] = []
-    private var correctAnswer:String = ""
-    private var hasBeenSkipped:Bool = false
-    private var currentPosition:Int = 0
-    private var trailLength = 0
-    private var skipButton:UIButton!
-    
-    @IBOutlet weak var BackgroundImage: UIImageView!
-    
-    required init(coder aDecoder: NSCoder) {
-        //fatalError("init(coder:) has not been implemented")
-        super.init(coder: aDecoder)
-    }
+class PictureMultiChoiceController: UIViewController {
+
+    var manager:QuestionManager!
+    var parent:HomeViewController!
+    let MAX_SCORE:Int = 100
+    var scoreForThisQuestion:Int = 0
+    var totalScore:Int = 0
+    var screenHeight:CGFloat = 0.0
+    var screenWidth:CGFloat = 0.0
+    var buttonA:UIButton!
+    var buttonB:UIButton!
+    var buttonC:UIButton!
+    var buttonD:UIButton!
+    var answerButtons:[UIButton!] = []
+    var skipButton:UIButton!
+    var questionField:UIImageView!
+    var scoreField:UITextView!
+    var trailPositionField:UITextView!
+    var validatedContent:String = ""
+    var format:String = ""
+    var endTrail:Bool = false
+    var hasBeenSkipped:Bool = false
+    var correctAnswer:String = ""
+    var trailManager:TrailManager!
+    var trailDecision:Int = 0
+    var scannedArtefact:Int = 0
+    var currentPosition:Int = 0
+    var trailLength:Int = 0
+    var trailScore:Int = 0
+    var answers:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        parent = getParentController()
+        scoreForThisQuestion = MAX_SCORE
+        screenHeight = self.view.bounds.height
+        screenWidth = self.view.bounds.width
         applyAnswers("Correct Answer")
         theOldSwitcheroo()
         if(!setupViews()){
-            fatalError("Unable To Load Question " + String(currentPosition))
+            fatalError("Could Not load Question")
         }
-        else{
-            
-            NSLog("MultiChoiceController Loaded")
-        }
+        
+        NSLog("Picture Multi Choice Question controller loaded")
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    internal func getParentController() -> HomeViewController{
-        return parent
     }
     
-    internal func setParentController(controller:HomeViewController){
-        parent = controller
-    }
-//    @IBAction func DismissClicked(sender: UIButton) {
-//        manager.dismiss(self as UIViewController)
-//        NSLog("Controller Dismissed")
-//    }
     
-    internal func setQuestionManager(manager:QuestionManager!){
-        self.manager = manager
-    }
-    
-    internal func getQuestionManager() -> QuestionManager!{
-        return manager
-    }
-    
-    internal func setupViews() -> Bool{
-        screenHeight = self.view.bounds.height
-        screenWidth = self.view.bounds.width
-        questionField = UITextView(frame: CGRect(x: CGFloat(0.0), y: screenHeight * 0.1, width: screenWidth, height: screenHeight))
-        questionField.text = "sampleQuestion"
-        questionField.textAlignment = NSTextAlignment.Center
-        questionField.sizeToFit()
-        questionField.frame = CGRect(x: CGFloat(0.0), y: screenHeight * 0.1, width: screenWidth, height: questionField.frame.height) // reset the width to the screenwidth
-        questionField.editable = false
-        questionField.textColor = UIColor.whiteColor()
-        questionField.backgroundColor = UIColor(white: 1, alpha: 0.0) // transparent colour
-        //-------------------------------------
-        trailPositionField = UITextView(frame: CGRect(x: screenWidth * 0.4, y: CGFloat(10.0), width: screenWidth, height: screenHeight))
-        let trailposition = String("Question : ").stringByAppendingString(String(currentPosition)).stringByAppendingString(" Of ").stringByAppendingString(String(trailLength))
-        trailPositionField.text = trailposition
-        trailPositionField.sizeToFit()
-        trailPositionField.editable = false
-        trailPositionField.textColor = UIColor.whiteColor()
-        trailPositionField.backgroundColor = UIColor(white: 1, alpha: 0.0) // transparent colour
-        //------------------------------------
-        ScoreField = UITextView(frame: CGRect(x: screenWidth * 0.7, y: CGFloat(10.0), width: screenWidth * 0.2, height: screenHeight * 0.05))
-        ScoreField.text = String("Score: ").stringByAppendingString(String(totalScore))
-        ScoreField.editable = false
-        ScoreField.textColor = UIColor.whiteColor()
-        ScoreField.backgroundColor = UIColor(white: 1, alpha: 0.0) // transparent colour
-        //------------------------------------
-        self.view.addSubview(trailPositionField)
-        self.view.addSubview(questionField)
-        self.view.addSubview(ScoreField)
-        //------------------------------------
-        buttonA = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.4, width: screenWidth * 0.8, height: screenHeight * 0.05))
+    private func setupViews() -> Bool{
+        buttonA = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.45, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonA.tag = 0
         buttonA.setTitle(answers[0], forState: UIControlState.Normal)
         buttonA.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
@@ -123,7 +70,7 @@ class MultiChoiceController: UIViewController {
         answerButtons.append(buttonA)
         //------------------------------------
         
-        buttonB = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.5, width: screenWidth * 0.8, height: screenHeight * 0.05))
+        buttonB = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.55, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonB.tag = 1
         buttonB.setTitle(answers[1], forState: UIControlState.Normal)
         buttonB.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
@@ -135,7 +82,7 @@ class MultiChoiceController: UIViewController {
         //------------------------------------
         
         //------------------------------------
-        buttonC = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.6, width: screenWidth * 0.8, height: screenHeight * 0.05))
+        buttonC = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.65, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonC.tag = 2
         buttonC.setTitle(answers[2], forState: UIControlState.Normal)
         buttonC.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
@@ -147,7 +94,7 @@ class MultiChoiceController: UIViewController {
         //------------------------------------
         
         //------------------------------------
-        buttonD = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.7, width: screenWidth * 0.8, height: screenHeight * 0.05))
+        buttonD = UIButton(frame: CGRect(x: screenWidth * 0.1, y: screenHeight * 0.75, width: screenWidth * 0.8, height: screenHeight * 0.05))
         buttonD.tag = 3
         buttonD.setTitle(answers[3], forState: UIControlState.Normal)
         buttonD.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
@@ -156,20 +103,72 @@ class MultiChoiceController: UIViewController {
         buttonD.addTarget(self, action: "AnswerButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
         self.view.addSubview(buttonD)
         answerButtons.append(buttonD)
-        //------------------------------------
+        //-----------------------------------
         skipButton = UIButton(frame: CGRect(x: screenWidth * 0.8, y: screenHeight * 0.9, width: screenWidth * 0.15, height: screenHeight * 0.05))
         skipButton.setTitle("Skip", forState: UIControlState.Normal)
         skipButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         skipButton.backgroundColor = UIColor.whiteColor()
         skipButton.titleLabel?.textAlignment = NSTextAlignment.Center
-        skipButton.addTarget(self, action: "ShowSkipDialog:", forControlEvents: UIControlEvents.TouchDown)
+        skipButton.addTarget(self, action: "SkipButtonClicked:", forControlEvents: UIControlEvents.TouchDown)
         self.view.addSubview(skipButton)
-        //------------------------------------
-        NSLog("All Views Constructed Sucessfully")
-
+        //----------------------------------
+        questionField = UIImageView(frame: CGRect(x: screenWidth * 0.25, y: screenHeight * 0.1, width: screenWidth, height: screenHeight))
+        let imagePath = NSBundle.mainBundle().pathForResource("images/46_rocks", ofType: ".jpg")!
+        questionField.image = imageResize(image: UIImage(contentsOfFile: imagePath)!, sizeChange: CGSize(width: 200, height: 200))
+        if(questionField.image == nil){
+            NSLog("Image == NIL")
+        }
+        questionField.backgroundColor = UIColor(white: 1, alpha: 0)
+        questionField.sizeToFit()
+        self.view.addSubview(questionField)
+        //----------------------------------
+        trailPositionField = UITextView(frame:CGRect(x: screenWidth * 0.4, y: CGFloat(10.0), width: screenWidth, height: screenHeight))
+        let trailPosition = String("Question : ").stringByAppendingString(String(currentPosition).stringByAppendingString(" Of ").stringByAppendingString(String(trailLength)))
+        trailPositionField.text = trailPosition
+        trailPositionField.sizeToFit()
+        trailPositionField.editable = false
+        trailPositionField.textColor = UIColor.whiteColor()
+        trailPositionField.backgroundColor = UIColor(white: 1, alpha: 0)
+        self.view.addSubview(trailPositionField)
+        //----------------------------------
+        scoreField = UITextView(frame: CGRect(x: screenWidth * 0.7, y: CGFloat(10.0), width: screenWidth * 0.2, height: screenHeight * 0.05))
+        scoreField.text = String("Score: ").stringByAppendingString(String(trailScore))
+        scoreField.editable = false
+        scoreField.textColor = UIColor.whiteColor()
+        scoreField.backgroundColor = UIColor(white: 1, alpha: 0)
+        self.view.addSubview(scoreField)
+        //----------------------------------
         return true
-        
     }
+    
+    internal func getParent() -> HomeViewController!{
+        return self.parent
+    }
+    
+    internal func SetParent(parent:HomeViewController!){
+        self.parent = parent
+    }
+    
+    internal func getQuestionManager() -> QuestionManager!{
+        return self.manager
+    }
+    
+    internal func setQuestionManager(manager:QuestionManager!){
+        self.manager = manager
+    }
+    
+    func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
+        
+        let hasAlpha = true
+        let scale: CGFloat = 0.0 // Use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        image.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        return scaledImage
+    }
+
     
     private func theOldSwitcheroo(){ // Name (c) Alex Kiedel
         var tempy:[String] = []
@@ -206,7 +205,7 @@ class MultiChoiceController: UIViewController {
     }
     
     internal func updateScore(score:Int){
-        ScoreField.text = String("Score: ").stringByAppendingString(String(score))
+        scoreField.text = String("Score: ").stringByAppendingString(String(score))
     }
     
     internal func updateTrailPosition(currentPosition:Int, MAX:Int){
@@ -266,6 +265,6 @@ class MultiChoiceController: UIViewController {
             answerButtons[i].enabled = false
         }
     }
-    
 }
+
 
