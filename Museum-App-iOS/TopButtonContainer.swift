@@ -76,24 +76,6 @@ internal class TopButtonContainer : UIViewController {
             if(TopButtons[i] == sender){
                 if(buttonType == ButtonType.Map){
                     NSLog("Map Button %i Was Pressed", i)
-                    switch(i){
-                        // FIXME implement button clicks
-                    case 0:
-                        break
-                    case 1:
-                        break
-                    case 2:
-                        break
-                    case 3:
-                        break
-                    case 4:
-                        break
-                    case 5:
-                        break
-                    default:
-                        NSLog("Invalid Button Index: %i", i)
-                        return
-                    }
                 }
                 else if(buttonType == ButtonType.Trail){
                     NSLog("Trail Button %i Was Pressed", i)
@@ -109,24 +91,6 @@ internal class TopButtonContainer : UIViewController {
                 }
                 else{
                     NSLog("Info Button %i Was Pressed", i)
-                    switch(i){
-                        // FIXME implement button clicks
-                    case 0:
-                        break
-                    case 1:
-                        break
-                    case 2:
-                        break
-                    case 3:
-                        break
-                    case 4:
-                        break
-                    case 5:
-                        break
-                    default:
-                        NSLog("Invalid Button Index: %i", i)
-                        return
-                    }
                 }
                 updateButtons(i, type: buttonType) // update the button images
             }

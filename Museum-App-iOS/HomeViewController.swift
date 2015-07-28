@@ -56,8 +56,6 @@ internal class HomeViewController : UIViewController {
                 continue
             }
         }
-        TopButtonsController?.parent = self
-        BottomButtonsController?.parent = self
         questionManager = instantiateQuestionManager()
         trailManager = instantiateTrailManager()
         Topcontainers.append(AquariumContentController)
@@ -68,6 +66,18 @@ internal class HomeViewController : UIViewController {
         InformationContainers.append(AppInfoContentController)
         
         NSLog("Home View Controller Loaded")
+        TopButtonsController?.parent = self
+        BottomButtonsController?.parent = self
+
+        for var i = 0; i < Topcontainers.count; i+=1{
+            Topcontainers[i]?.hidden = true
+        }
+        for var i = 0; i < BottomContainers.count; i+=1{
+            BottomContainers[i]?.hidden = true
+        }
+        for var i = 0; i < InformationContainers.count; i+=1{
+            InformationContainers[i]?.hidden = true
+        }
         self.MainContentContainer.hidden = false
         //questionManager.callMultiChoice("multiChoiceController")
         //questionManager.callSingleAnswer("singleAnswerController")
