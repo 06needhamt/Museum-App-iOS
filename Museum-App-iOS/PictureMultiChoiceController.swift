@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 THOMAS NEEDHAM. All rights reserved.
 //
 
+// uses https://github.com/tejas123/implement-Toast-Message-in-iOS-using-Swift
+
 import UIKit
 
 class PictureMultiChoiceController: UIViewController {
@@ -188,6 +190,7 @@ class PictureMultiChoiceController: UIViewController {
             answerButtons[buttonTag].backgroundColor = UIColor.greenColor()
             JLToast.makeText("Correct Answer Well Done").show()
             updateScore(totalScore + scoreForThisQuestion)
+            createNextButton()
         }
         else{
             answerButtons[buttonTag].backgroundColor = UIColor.redColor()

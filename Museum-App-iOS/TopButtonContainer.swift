@@ -97,33 +97,14 @@ internal class TopButtonContainer : UIViewController {
                 }
                 else if(buttonType == ButtonType.Trail){
                     NSLog("Trail Button %i Was Pressed", i)
-                    switch(i){
-                        // FIXME implement button clicks
-                    case 0:
-                        parent?.AquariumContentController.hidden = false
-                        parent?.MainContentContainer.hidden = true
-                        parent?.BugsContentController.hidden = true
-                        parent?.QRContentContainer.hidden = true
-                        NSLog("Loading Aquarium");
-                        break
-                    case 1:
-                        parent?.AquariumContentController.hidden = true
-                        parent?.MainContentContainer.hidden = true
-                        parent?.BugsContentController.hidden = false
-                        parent?.QRContentContainer.hidden = true
-                        NSLog("Loading Bugs")
-                        break
-                    case 2:
-                        break
-                    case 3:
-                        break
-                    case 4:
-                        break
-                    case 5:
-                        break
-                    default:
-                        NSLog("Invalid Button Index: %i", i)
-                        return
+                    parent?.MainContentContainer.hidden = true
+                    for var j:CGFloat = 0; j < NUM_BUTTONS; j+=1{
+                        if(CGFloat(i) == j){
+                            parent?.Topcontainers[i]?.hidden = false
+                        }
+                        else{
+                            parent?.Topcontainers[i]?.hidden = true
+                        }
                     }
                 }
                 else{

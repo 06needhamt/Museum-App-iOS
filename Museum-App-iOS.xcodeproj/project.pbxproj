@@ -36,6 +36,7 @@
 		32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */; };
 		3253071F1B53F9E800D04297 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3253071E1B53F9E800D04297 /* MapKit.framework */; };
 		325307211B540D8700D04297 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325307201B540D8700D04297 /* ButtonType.swift */; };
+		325C496A1B6796CB00BBE25F /* AppInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C49691B6796CB00BBE25F /* AppInfoController.swift */; };
 		325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E8D1E1B53BF50004A727F /* QRViewController.swift */; };
 		3260CDFD1B582EA600CEA424 /* TrailStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260CDFC1B582EA600CEA424 /* TrailStep.swift */; };
 		3260CDFF1B5833EA00CEA424 /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */; };
@@ -107,6 +108,7 @@
 		32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageContentContainer.swift; sourceTree = "<group>"; };
 		3253071E1B53F9E800D04297 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		325307201B540D8700D04297 /* ButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
+		325C49691B6796CB00BBE25F /* AppInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoController.swift; sourceTree = "<group>"; };
 		325E8D1E1B53BF50004A727F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		3260CDFC1B582EA600CEA424 /* TrailStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailStep.swift; sourceTree = "<group>"; };
 		3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */,
 				32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */,
 				32DAA7061B668300001CD0AD /* QuestionResult.swift */,
+				325C49691B6796CB00BBE25F /* AppInfoController.swift */,
 			);
 			path = "Museum-App-iOS";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				32DD324E1B57D30000D97C70 /* QuestionType.swift in Sources */,
 				32DD32461B57C41A00D97C70 /* TrailInfo.swift in Sources */,
 				3260CDFD1B582EA600CEA424 /* TrailStep.swift in Sources */,
+				325C496A1B6796CB00BBE25F /* AppInfoController.swift in Sources */,
 				32512C6A1B52727C00BC4ADC /* AppDelegate.swift in Sources */,
 				32512C8A1B52733000BC4ADC /* BottomButtonContainer.swift in Sources */,
 				3241D0C31B6173ED00E21807 /* JLToastView.swift in Sources */,

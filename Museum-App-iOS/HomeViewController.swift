@@ -21,7 +21,13 @@ internal class HomeViewController : UIViewController {
     @IBOutlet weak var BottomButtonsContentContainer: UIView!
     @IBOutlet weak var QRContentContainer: UIView!
     @IBOutlet weak var BugsContentController: UIView!
-    var containerViews:[(UIView!,String)] = [(nil,"")]
+    @IBOutlet weak var AppInfoContentController: UIView!
+    
+    //var containerViews:[(UIView!,String)] = [(nil,"")]
+    var Topcontainers = [UIView?]()
+    var BottomContainers = [UIView?]()
+    var MapContainers = [UIView?]()
+    var InformationContainers = [UIView?]()
     var questionManager:QuestionManager! = nil
     var trailManager:TrailManager! = nil
     var lastQuestionResult:QuestionResult! = nil
@@ -49,18 +55,20 @@ internal class HomeViewController : UIViewController {
                 //NSLog("Unknown view Controller Type: %s", controllers[i].kind!!)
                 continue
             }
-//         containerViews.removeAll(keepCapacity: true)
-//         containerViews.append((AquariumContentController,"Aquarium")) // what the f**k apple why cant we add protocol object optionals to an array ???
         }
         TopButtonsController?.parent = self
         BottomButtonsController?.parent = self
         questionManager = instantiateQuestionManager()
         trailManager = instantiateTrailManager()
+        Topcontainers.append(AquariumContentController)
+        Topcontainers.append(BugsContentController)
+        BottomContainers.append(MainContentContainer)
+        BottomContainers.append(MainContentContainer)
+        BottomContainers.append(QRContentContainer)
+        InformationContainers.append(AppInfoContentController)
+        
         NSLog("Home View Controller Loaded")
         self.MainContentContainer.hidden = false
-        self.AquariumContentController.hidden = true
-        self.QRContentContainer.hidden = true
-        self.BugsContentController.hidden = true
         //questionManager.callMultiChoice("multiChoiceController")
         //questionManager.callSingleAnswer("singleAnswerController")
         //questionManager.callPictureQuestion("pictureQuestionController")
