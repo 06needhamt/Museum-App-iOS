@@ -24,10 +24,10 @@ internal class HomeViewController : UIViewController {
     @IBOutlet weak var AppInfoContentController: UIView!
     
     //var containerViews:[(UIView!,String)] = [(nil,"")]
-    var Topcontainers = [UIView?]()
-    var BottomContainers = [UIView?]()
-    var MapContainers = [UIView?]()
-    var InformationContainers = [UIView?]()
+    var Topcontainers = [UIView]()
+    var BottomContainers = [UIView]()
+    var MapContainers = [UIView]()
+    var InformationContainers = [UIView]()
     var questionManager:QuestionManager! = nil
     var trailManager:TrailManager! = nil
     var lastQuestionResult:QuestionResult! = nil
@@ -70,13 +70,13 @@ internal class HomeViewController : UIViewController {
         BottomButtonsController?.parent = self
 
         for var i = 0; i < Topcontainers.count; i+=1{
-            Topcontainers[i]?.hidden = true
+            Topcontainers[i].hidden = true
         }
         for var i = 0; i < BottomContainers.count; i+=1{
-            BottomContainers[i]?.hidden = true
+            BottomContainers[i].hidden = true
         }
         for var i = 0; i < InformationContainers.count; i+=1{
-            InformationContainers[i]?.hidden = true
+            InformationContainers[i].hidden = true
         }
         self.MainContentContainer.hidden = false
         //questionManager.callMultiChoice("multiChoiceController")

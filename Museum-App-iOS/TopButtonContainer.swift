@@ -80,12 +80,17 @@ internal class TopButtonContainer : UIViewController {
                 else if(buttonType == ButtonType.Trail){
                     NSLog("Trail Button %i Was Pressed", i)
                     parent?.MainContentContainer.hidden = true
-                    for var j:CGFloat = 0; j < NUM_BUTTONS; j+=1{
+                    for var j:CGFloat = 0; j < CGFloat(parent!.Topcontainers.count); j+=1{
+                        println(parent?.Topcontainers[i].hidden)
+                        if(parent!.Topcontainers.count == 0){
+                            NSLog("Containers == NIL");
+                        }
+                        var controller:UIView = parent!.Topcontainers[Int(j)]
                         if(CGFloat(i) == j){
-                            parent?.Topcontainers[i]?.hidden = false
+                            controller.hidden = false
                         }
                         else{
-                            parent?.Topcontainers[i]?.hidden = true
+                            controller.hidden = true
                         }
                     }
                 }
