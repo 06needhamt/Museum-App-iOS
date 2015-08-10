@@ -23,6 +23,9 @@ internal class HomeViewController : UIViewController {
     @IBOutlet weak var BugsContentController: UIView!
     @IBOutlet weak var AppInfoContentController: UIView!
     
+    @IBOutlet weak var AncientWorldContentController: UIView!
+    @IBOutlet weak var WorldCulturesContentController: UIView!
+    
     //var containerViews:[(UIView!,String)] = [(nil,"")]
     var Topcontainers = [UIView]()
     var BottomContainers = [UIView]()
@@ -60,6 +63,8 @@ internal class HomeViewController : UIViewController {
         trailManager = instantiateTrailManager()
         Topcontainers.append(AquariumContentController)
         Topcontainers.append(BugsContentController)
+        Topcontainers.append(AncientWorldContentController)
+        Topcontainers.append(WorldCulturesContentController)
         BottomContainers.append(MainContentContainer)
         BottomContainers.append(MainContentContainer)
         BottomContainers.append(QRContentContainer)
