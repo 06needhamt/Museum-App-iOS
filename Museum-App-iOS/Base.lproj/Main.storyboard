@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="toI-0P-TRc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -32,11 +33,20 @@
                                     <segue destination="QZv-3Y-zm8" kind="show" id="g7i-L1-Hr9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Launcher Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="XER-26-w6R">
-                                <rect key="frame" x="-113" y="0.0" width="600" height="667"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Launcher Screen Background" translatesAutoresizingMaskIntoConstraints="NO" id="XER-26-w6R">
+                                <rect key="frame" x="-113" y="0.0" width="600" height="608"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="V6R-I9-5K4"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XER-26-w6R" secondAttribute="trailing" id="Mb2-SY-XVQ"/>
+                            <constraint firstItem="XER-26-w6R" firstAttribute="top" secondItem="JGC-tM-KIy" secondAttribute="topMargin" id="Sjj-xt-Pzd"/>
+                            <constraint firstItem="8Ch-R4-SD4" firstAttribute="top" secondItem="XER-26-w6R" secondAttribute="bottom" id="fZz-pK-5l4"/>
+                            <constraint firstItem="XER-26-w6R" firstAttribute="leading" secondItem="JGC-tM-KIy" secondAttribute="leadingMargin" id="g3l-Mv-Qfo"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -46,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fsl-YW-UES" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37.5" y="563.5"/>
+            <point key="canvasLocation" x="178.5" y="563.5"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="PUk-wT-mqL">
@@ -86,6 +96,9 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSS-QS-lSC">
                                 <rect key="frame" x="0.0" y="111" width="375" height="460"/>
+                                <connections>
+                                    <segue destination="Ux5-MR-3df" kind="embed" id="4du-ZP-SvE"/>
+                                </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-BT-bqu">
                                 <rect key="frame" x="0.0" y="111" width="375" height="460"/>
@@ -93,18 +106,11 @@
                                     <segue destination="XfY-Ve-o8T" kind="embed" id="dkK-AJ-MCE"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TNt-sv-9dm">
-                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
-                                <connections>
-                                    <segue destination="MYw-V3-eIO" kind="embed" id="mGO-Z5-PC8"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="AppInfoContentController" destination="TNt-sv-9dm" id="1Hv-KC-Tg1"/>
                         <outlet property="AquariumContentController" destination="V2g-WQ-Lta" id="Ovd-jR-Uuu"/>
                         <outlet property="BottomButtonsContentContainer" destination="lTh-07-8Oz" id="Hxm-F7-0gB"/>
                         <outlet property="BugsContentController" destination="gvb-BT-bqu" id="4hK-om-8J0"/>
@@ -142,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="943-g4-Zzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818.5" y="-252.5"/>
+            <point key="canvasLocation" x="535" y="-146"/>
         </scene>
         <!--Picture Question Controller-->
         <scene sceneID="MRb-NZ-dW2">
@@ -220,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShQ-1N-4z0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1342.5" y="-252.5"/>
+            <point key="canvasLocation" x="1031.5" y="-259.5"/>
         </scene>
         <!--Top Button Container-->
         <scene sceneID="ceb-xY-iMT">
@@ -239,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTo-MD-tem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.5" y="199"/>
+            <point key="canvasLocation" x="1042.5" y="169"/>
         </scene>
         <!--Bottom Button Container-->
         <scene sceneID="LKS-Gt-Jwc">
@@ -258,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRd-C7-tfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.5" y="1088"/>
+            <point key="canvasLocation" x="969.5" y="1169"/>
         </scene>
         <!--Home Page Content Container-->
         <scene sceneID="1db-Th-SQM">
@@ -285,7 +291,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSO-uO-Vqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771.5" y="559"/>
+            <point key="canvasLocation" x="1530.5" y="572"/>
+        </scene>
+        <!--Aquarium Content Controller-->
+        <scene sceneID="Jkc-Us-bll">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mMO-ZS-mgY" customClass="AquariumContentController" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BBq-6r-N6h"/>
+                        <viewControllerLayoutGuide type="bottom" id="rHT-ne-Y7a"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pMa-ln-eeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-Zh-ZaY">
+                                <rect key="frame" x="5" y="-97" width="380" height="460"/>
+                                <connections>
+                                    <segue destination="mMO-ZS-mgY" kind="embed" id="ysw-Sr-DIa"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSA-g5-KOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="542" y="1204"/>
         </scene>
         <!--Aquarium Content Controller-->
         <scene sceneID="utl-03-khr">
@@ -338,7 +371,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPf-eT-EOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771.5" y="1088"/>
+            <point key="canvasLocation" x="1516.5" y="1158"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oxt-zX-LCw">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ux5-MR-3df" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GoB-E6-rsm"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Hy-qX-3SZ"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lPp-RD-2LJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H2T-bh-byi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647.5" y="577"/>
         </scene>
         <!--Bugs Conent Controller-->
         <scene sceneID="y5A-7l-pxE">
@@ -387,38 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fW-tw-29c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771.5" y="45"/>
-        </scene>
-        <!--App Info Controller-->
-        <scene sceneID="Rsb-pz-tMf">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="MYw-V3-eIO" customClass="AppInfoController" customModule="Museum_App_iOS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h61-VW-QTy"/>
-                        <viewControllerLayoutGuide type="bottom" id="GVn-hw-PHb"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HKO-OI-02h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="iBm-mh-RgA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
-                            </imageView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fo9-yS-slq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <connections>
-                        <outlet property="WebView" destination="Fo9-yS-slq" id="mUY-ix-t19"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mKo-vX-icH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="426.5" y="974"/>
+            <point key="canvasLocation" x="1525.5" y="47"/>
         </scene>
     </scenes>
     <resources>

@@ -189,7 +189,6 @@ class MultiChoiceController: UIViewController {
             answerButtons[buttonTag].backgroundColor = UIColor.greenColor()
             JLToast.makeText("Correct Answer Well Done").show()
             updateScore(totalScore + scoreForThisQuestion)
-            createNextButton()
         }
         else{
             answerButtons[buttonTag].backgroundColor = UIColor.redColor()
