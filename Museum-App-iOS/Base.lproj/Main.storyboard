@@ -99,11 +99,24 @@
                                     <segue destination="MYw-V3-eIO" kind="embed" id="mGO-Z5-PC8"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nae-xa-PZl">
+                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
+                                <connections>
+                                    <segue destination="W7G-3a-X0J" kind="embed" id="bqD-mf-8cF"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FmA-Gp-3OU">
+                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
+                                <connections>
+                                    <segue destination="gFv-v9-WRL" kind="embed" id="o3J-Zf-sT6"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="AncientWorldContentController" destination="nae-xa-PZl" id="Bip-0A-j8S"/>
                         <outlet property="AppInfoContentController" destination="TNt-sv-9dm" id="1Hv-KC-Tg1"/>
                         <outlet property="AquariumContentController" destination="V2g-WQ-Lta" id="Ovd-jR-Uuu"/>
                         <outlet property="BottomButtonsContentContainer" destination="lTh-07-8Oz" id="Hxm-F7-0gB"/>
@@ -111,6 +124,7 @@
                         <outlet property="MainContentContainer" destination="Zot-qJ-yJG" id="82h-v0-DEN"/>
                         <outlet property="QRContentContainer" destination="aSS-QS-lSC" id="JIy-Li-98S"/>
                         <outlet property="TopButtonsContentContainer" destination="AGt-Hk-KAX" id="TV0-8b-Sfh"/>
+                        <outlet property="WorldCulturesContentController" destination="FmA-Gp-3OU" id="Z9T-na-wZY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7T-DS-WCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,11 +434,101 @@
             </objects>
             <point key="canvasLocation" x="426.5" y="974"/>
         </scene>
+        <!--Ancient World Content Controller-->
+        <scene sceneID="X6h-Dy-b4j">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="W7G-3a-X0J" customClass="AncientWorldContentController" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VbU-eN-IBM"/>
+                        <viewControllerLayoutGuide type="bottom" id="6gv-BD-SIA"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="F1E-zu-t6M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="08c-GT-hl7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome To Ancient World" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-Wn-DNV">
+                                <rect key="frame" x="50" y="21" width="275" height="44"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Third Floor Map" translatesAutoresizingMaskIntoConstraints="NO" id="8px-sy-Sjf">
+                                <rect key="frame" x="49" y="153" width="310" height="171"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7P-XB-cyq">
+                                <rect key="frame" x="-7" y="273" width="375" height="162"/>
+                            </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Put More Information Here" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-za-Rpi">
+                                <rect key="frame" x="85" y="73" width="240" height="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="AvailableTrailPicker" destination="j7P-XB-cyq" id="Mtw-Ma-tOj"/>
+                        <outlet property="Background" destination="08c-GT-hl7" id="hyx-4A-Qyb"/>
+                        <outlet property="MapImage" destination="8px-sy-Sjf" id="3je-XQ-mQg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrT-fC-wXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222.5" y="575"/>
+        </scene>
+        <!--World Cultures Content Controller-->
+        <scene sceneID="CrD-yq-psL">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gFv-v9-WRL" customClass="WorldCulturesContentController" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wbX-wm-nUH"/>
+                        <viewControllerLayoutGuide type="bottom" id="jFF-ab-xUB"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oi8-uE-Kfz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="75i-he-iJO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome To World Cultures" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wmR-4P-JW5">
+                                <rect key="frame" x="50" y="21" width="275" height="44"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Put More Information Here" translatesAutoresizingMaskIntoConstraints="NO" id="yCP-sa-d81">
+                                <rect key="frame" x="85" y="73" width="240" height="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Third Floor Map" translatesAutoresizingMaskIntoConstraints="NO" id="AMC-P6-bbV">
+                                <rect key="frame" x="49" y="153" width="310" height="171"/>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fzW-YW-wXW">
+                                <rect key="frame" x="-7" y="273" width="375" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yLb-Kf-Dll" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222.5" y="64"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="600" height="600"/>
         <image name="First Floor Map" width="975" height="752"/>
         <image name="Launcher Screen Background" width="600" height="991"/>
         <image name="Second Floor Map" width="975" height="752"/>
+        <image name="Third Floor Map" width="975" height="752"/>
     </resources>
 </document>
