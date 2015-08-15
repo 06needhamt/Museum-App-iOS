@@ -65,6 +65,9 @@ internal class HomeViewController : UIViewController {
         Topcontainers.append(BugsContentController)
         Topcontainers.append(AncientWorldContentController)
         Topcontainers.append(WorldCulturesContentController)
+        Topcontainers.append(UIView())
+        Topcontainers.append(UIView())
+        
         BottomContainers.append(MainContentContainer)
         BottomContainers.append(MainContentContainer)
         BottomContainers.append(QRContentContainer)
