@@ -16,11 +16,11 @@ class TrailInfo: NSObject {
     private let Trailtype: TrailType
     
     required init(data: FMResultSet){
-        Trailid = data.stringForColumn("_id").toInt()!
-        Exhibitid = data.stringForColumn("tra_exhibitID").toInt()!
+        Trailid = Int(data.stringForColumn("_id"))!
+        Exhibitid = Int(data.stringForColumn("tra_exhibitID"))!
         Trailname = data.stringForColumn("tra_name")
         Traildescription = data.stringForColumn("tra_description")
-        Trailtype = TrailType(rawValue: data.stringForColumn("tra_type").toInt()!)!
+        Trailtype = TrailType(rawValue: Int(data.stringForColumn("tra_type"))!)!
         data.close()
         super.init()
     }

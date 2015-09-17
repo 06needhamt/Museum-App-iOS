@@ -16,7 +16,7 @@ internal class QRViewController: UIViewController,AVCaptureMetadataOutputObjects
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var QRCodeFrameView: UIView?
     
-    required internal init(coder aDecoder: NSCoder){
+    required internal init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
     
@@ -24,7 +24,13 @@ internal class QRViewController: UIViewController,AVCaptureMetadataOutputObjects
         super.viewDidLoad()
         let captureDevice:AVCaptureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         var error:NSError?
-        let input:AnyObject! = AVCaptureDeviceInput.deviceInputWithDevice(captureDevice, error: &error)
+        let input:AnyObject!
+        do {
+            input = try AVCaptureDeviceInput(device: captureDevice)
+        } catch let error1 as NSError {
+            error = error1
+            input = nil
+        }
         if(error != nil){
             NSLog("An Error Occured: %@", error!.localizedDescription)
         }
@@ -37,7 +43,7 @@ internal class QRViewController: UIViewController,AVCaptureMetadataOutputObjects
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
         videoPreviewLayer?.frame = view.layer.bounds
-        view.layer.addSublayer(videoPreviewLayer)
+        view.layer.addSublayer(videoPreviewLayer!)
         captureSession?.startRunning()
         NSLog("QR Controller Loaded");
     }

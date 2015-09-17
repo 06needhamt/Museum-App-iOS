@@ -161,7 +161,7 @@ class PictureMultiChoiceController: UIViewController {
         self.manager = manager
     }
     
-    func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
+    func imageResize (image image:UIImage, sizeChange:CGSize)-> UIImage{
         
         let hasAlpha = true
         let scale: CGFloat = 0.0 // Use scale factor of main screen
@@ -226,7 +226,7 @@ class PictureMultiChoiceController: UIViewController {
     }
     
     private func applyAnswers(tempy:String){
-        var templist:[String] = tempy.componentsSeparatedByString(",")
+        let templist:[String] = tempy.componentsSeparatedByString(",")
         answers = templist
         correctAnswer = answers[0]
         while(answers.count < 4){

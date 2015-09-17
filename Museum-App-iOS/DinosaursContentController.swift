@@ -1,24 +1,18 @@
 //
-//  AquariumContentController.swift
+//  DinosaursContentController.swift
 //  Museum-App-iOS
 //
-//  Created by THOMAS NEEDHAM on 12/07/2015.
+//  Created by THOMAS NEEDHAM on 10/09/2015.
 //  Copyright (c) 2015 THOMAS NEEDHAM. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class AquariumContentController : UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+class DinosaursContentController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
 
+    var Trails:[String] = []
+    
     @IBOutlet weak var AvailableTrailPicker: UIPickerView!
-    @IBOutlet weak var BackgroundImage: UIImageView!
-    @IBOutlet weak var MapImage: UIImageView!
-    
-    @IBOutlet weak var DescriptionText: UITextView!
-    @IBOutlet weak var TitleText: UITextView!
-    var Trails:[String] = [] // array for spinner data
-    
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
@@ -63,4 +57,5 @@ class AquariumContentController : UIViewController,UIPickerViewDataSource,UIPick
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //myLabel.text = Trails[row]
     }
+
 }

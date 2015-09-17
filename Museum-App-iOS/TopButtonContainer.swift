@@ -29,7 +29,7 @@ internal class TopButtonContainer : UIViewController {
     let NUM_MAP_BUTTONS:CGFloat = 6
     var buttonType: ButtonType = ButtonType.Trail
     
-    required internal init(coder aDecoder: NSCoder) {
+    required internal init?(coder aDecoder: NSCoder) {
         //parent = HomeViewController(coder: aDecoder)
         super.init(coder: aDecoder);
     }
@@ -53,10 +53,10 @@ internal class TopButtonContainer : UIViewController {
     private func CreateButton(index:CGFloat) -> UIButton{
         let Viewwidth: CGFloat = self.view.bounds.width // get the width of the screen
         let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 7.25) // get the height of the screen and divide it by eight because the buttons take up an eighth of the screen
-        var i:Int = Int(index) // convert index to an int
+        let i:Int = Int(index) // convert index to an int
         var value:String = TopButtonImageNamesBlue[i]
-        var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight)) // create the button with a size and location
-        var image:UIImage? = (UIImage(named: TopButtonImageNamesBlue[i])) // load the image from assets
+        let button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight)) // create the button with a size and location
+        let image:UIImage? = (UIImage(named: TopButtonImageNamesBlue[i])) // load the image from assets
         if(image == nil){
             NSLog("Image is NIL")
         }
@@ -85,11 +85,11 @@ internal class TopButtonContainer : UIViewController {
                             NSLog("Container == nil")
                             return
                         }
-                        println(parent?.Topcontainers[i].hidden)
+                        print(parent?.Topcontainers[i].hidden)
                         if(parent!.Topcontainers.count == 0){
                             NSLog("Containers == NIL");
                         }
-                        var controller:UIView = parent!.Topcontainers[Int(j)]
+                        let controller:UIView = parent!.Topcontainers[Int(j)]
                         if(CGFloat(i) == j){
                             controller.hidden = false
                         }

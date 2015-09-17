@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="toI-0P-TRc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="toI-0P-TRc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -111,6 +111,12 @@
                                     <segue destination="gFv-v9-WRL" kind="embed" id="o3J-Zf-sT6"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5s-5p-3yF">
+                                <rect key="frame" x="0.0" y="111" width="375" height="460"/>
+                                <connections>
+                                    <segue destination="CwO-2d-n0S" kind="embed" id="dkT-EV-uWV"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -121,6 +127,7 @@
                         <outlet property="AquariumContentController" destination="V2g-WQ-Lta" id="Ovd-jR-Uuu"/>
                         <outlet property="BottomButtonsContentContainer" destination="lTh-07-8Oz" id="Hxm-F7-0gB"/>
                         <outlet property="BugsContentController" destination="gvb-BT-bqu" id="4hK-om-8J0"/>
+                        <outlet property="DinosaursContentController" destination="U5s-5p-3yF" id="lVM-Ty-VdN"/>
                         <outlet property="MainContentContainer" destination="Zot-qJ-yJG" id="82h-v0-DEN"/>
                         <outlet property="QRContentContainer" destination="aSS-QS-lSC" id="JIy-Li-98S"/>
                         <outlet property="TopButtonsContentContainer" destination="AGt-Hk-KAX" id="TV0-8b-Sfh"/>
@@ -446,9 +453,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="08c-GT-hl7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome To Ancient World" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="O7L-Wn-DNV">
                                 <rect key="frame" x="50" y="21" width="275" height="44"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -467,6 +471,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="08c-GT-hl7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -518,15 +525,66 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="AvailableTrailPicker" destination="fzW-YW-wXW" id="t3u-bO-6kM"/>
+                        <outlet property="Background" destination="fzW-YW-wXW" id="vHJ-SL-HEE"/>
+                        <outlet property="MapImage" destination="AMC-P6-bbV" id="cP3-I5-3Vz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLb-Kf-Dll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2222.5" y="64"/>
         </scene>
+        <!--Dinosaurs Content Controller-->
+        <scene sceneID="Ook-T7-qmG">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="CwO-2d-n0S" customClass="DinosaursContentController" customModule="Museum_App_iOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XXM-77-pQI"/>
+                        <viewControllerLayoutGuide type="bottom" id="K53-ew-vWF"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Phm-xg-Gsx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Q4k-hK-vGw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Welcome To Dinosaurs" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ukx-kJ-sW4">
+                                <rect key="frame" x="50" y="21" width="275" height="44"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-R9-UNj">
+                                <rect key="frame" x="-7" y="273" width="375" height="162"/>
+                            </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Put More Information Here" translatesAutoresizingMaskIntoConstraints="NO" id="NZZ-cb-xr9">
+                                <rect key="frame" x="85" y="73" width="240" height="52"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Fourth Floor Map" translatesAutoresizingMaskIntoConstraints="NO" id="0Qs-V4-lwE">
+                                <rect key="frame" x="58" y="127" width="310" height="171"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="AvailableTrailPicker" destination="fS1-R9-UNj" id="fcy-XY-i2A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXx-GW-qJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222.5" y="1088"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="600" height="600"/>
         <image name="First Floor Map" width="975" height="752"/>
+        <image name="Fourth Floor Map" width="975" height="752"/>
         <image name="Launcher Screen Background" width="600" height="991"/>
         <image name="Second Floor Map" width="975" height="752"/>
         <image name="Third Floor Map" width="975" height="752"/>

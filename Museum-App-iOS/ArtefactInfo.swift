@@ -19,12 +19,12 @@ class ArtefactInfo: NSObject {
     var artefactFloor:Int = 0
     
     required init(data: FMResultSet) {
-        artefactID = data.stringForColumn("_id").toInt()!
+        artefactID = Int(data.stringForColumn("_id"))!
         artefactName = data.stringForColumn("art_name")
         artefactDescription = data.stringForColumn("art_description")
         artefactImageName = data.stringForColumn("art_image")
         artefactNo = data.stringForColumn("art_museumNo")
-        artefactExhibitID = data.stringForColumn("art_exhibitID").toInt()!
+        artefactExhibitID = Int(data.stringForColumn("art_exhibitID"))!
         data.close()
         super.init()
     }

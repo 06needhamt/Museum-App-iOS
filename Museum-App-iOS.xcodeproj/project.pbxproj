@@ -34,7 +34,6 @@
 		32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */; };
 		32512C8E1B52738800BC4ADC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8D1B52738800BC4ADC /* HomeViewController.swift */; };
 		32512C901B5273B300BC4ADC /* HomePageContentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */; };
-		3253071F1B53F9E800D04297 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3253071E1B53F9E800D04297 /* MapKit.framework */; };
 		325307211B540D8700D04297 /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325307201B540D8700D04297 /* ButtonType.swift */; };
 		325C496A1B6796CB00BBE25F /* AppInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C49691B6796CB00BBE25F /* AppInfoController.swift */; };
 		325E8D1F1B53BF50004A727F /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325E8D1E1B53BF50004A727F /* QRViewController.swift */; };
@@ -47,6 +46,7 @@
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
 		32C77AB81B7922C2006BCE0D /* AncientWorldContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C77AB71B7922C2006BCE0D /* AncientWorldContentController.swift */; };
 		32C77ABA1B79265C006BCE0D /* WorldCulturesContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C77AB91B79265C006BCE0D /* WorldCulturesContentController.swift */; };
+		32CAC7331BA190BE003B65D1 /* DinosaursContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CAC7321BA190BE003B65D1 /* DinosaursContentController.swift */; };
 		32DAA7031B66712A001CD0AD /* PictureQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */; };
 		32DAA7051B667CEC001CD0AD /* PictureMultiChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */; };
 		32DAA7071B668300001CD0AD /* QuestionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DAA7061B668300001CD0AD /* QuestionResult.swift */; };
@@ -108,7 +108,6 @@
 		32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopButtonContainer.swift; sourceTree = "<group>"; };
 		32512C8D1B52738800BC4ADC /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageContentContainer.swift; sourceTree = "<group>"; };
-		3253071E1B53F9E800D04297 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		325307201B540D8700D04297 /* ButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonType.swift; sourceTree = "<group>"; };
 		325C49691B6796CB00BBE25F /* AppInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoController.swift; sourceTree = "<group>"; };
 		325E8D1E1B53BF50004A727F /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
 		32C77AB71B7922C2006BCE0D /* AncientWorldContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncientWorldContentController.swift; sourceTree = "<group>"; };
 		32C77AB91B79265C006BCE0D /* WorldCulturesContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldCulturesContentController.swift; sourceTree = "<group>"; };
+		32CAC7321BA190BE003B65D1 /* DinosaursContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DinosaursContentController.swift; sourceTree = "<group>"; };
 		32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureQuestionController.swift; sourceTree = "<group>"; };
 		32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureMultiChoiceController.swift; sourceTree = "<group>"; };
 		32DAA7061B668300001CD0AD /* QuestionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionResult.swift; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3253071F1B53F9E800D04297 /* MapKit.framework in Frameworks */,
 				3236E6401B529D2F00701D27 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,7 +178,6 @@
 				3236E6371B529B8900701D27 /* FMDB.h */,
 				3236E6381B529B8900701D27 /* FMResultSet.h */,
 				3236E6391B529B8900701D27 /* FMResultSet.m */,
-				32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */,
 			);
 			name = FMDB;
 			sourceTree = "<group>";
@@ -198,7 +196,6 @@
 		32512C5B1B52727C00BC4ADC = {
 			isa = PBXGroup;
 			children = (
-				3253071E1B53F9E800D04297 /* MapKit.framework */,
 				3236E63F1B529D2F00701D27 /* libsqlite3.0.dylib */,
 				32512C661B52727C00BC4ADC /* Museum-App-iOS */,
 				32512C7C1B52727D00BC4ADC /* Museum-App-iOSTests */,
@@ -218,41 +215,43 @@
 		32512C661B52727C00BC4ADC /* Museum-App-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3241D0BC1B6173ED00E21807 /* JLToast */,
+				32512C701B52727C00BC4ADC /* Images.xcassets */,
 				32512C671B52727C00BC4ADC /* Supporting Files */,
 				3236E6451B52A1D500701D27 /* Resources */,
+				3241D0BC1B6173ED00E21807 /* JLToast */,
 				3236E6471B52A1FD00701D27 /* FMDB */,
-				32512C691B52727C00BC4ADC /* AppDelegate.swift */,
-				32512C6B1B52727C00BC4ADC /* ViewController.swift */,
-				32512C6D1B52727C00BC4ADC /* Main.storyboard */,
-				32512C701B52727C00BC4ADC /* Images.xcassets */,
-				32512C721B52727C00BC4ADC /* LaunchScreen.xib */,
-				32512C891B52733000BC4ADC /* BottomButtonContainer.swift */,
-				32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */,
-				32512C8D1B52738800BC4ADC /* HomeViewController.swift */,
-				3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */,
-				3236E6411B529E3000701D27 /* DatabaseLoader.swift */,
-				32904CEC1B52D068006699A8 /* AquariumContentController.swift */,
-				325E8D1E1B53BF50004A727F /* QRViewController.swift */,
-				325307201B540D8700D04297 /* ButtonType.swift */,
-				327DDEF41B551D2900908F64 /* BugsConentController.swift */,
-				320597ED1B55294D0034DF74 /* TrailManager.swift */,
-				32DD32451B57C41A00D97C70 /* TrailInfo.swift */,
-				32DD32471B57C47B00D97C70 /* TrailType.swift */,
-				32DD32491B57CCA500D97C70 /* ArtefactInfo.swift */,
-				32DD324B1B57D16600D97C70 /* TrailStepInfo.swift */,
-				32DD324D1B57D30000D97C70 /* QuestionType.swift */,
-				32DD324F1B57DA8D00D97C70 /* Modes.swift */,
-				3260CDFC1B582EA600CEA424 /* TrailStep.swift */,
-				3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */,
-				320EE56B1B58478600201663 /* ArtefactImage.swift */,
-				3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */,
-				327CB7D81B62393800801547 /* SingleAnswerController.swift */,
-				32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */,
-				32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */,
-				32DAA7061B668300001CD0AD /* QuestionResult.swift */,
-				325C49691B6796CB00BBE25F /* AppInfoController.swift */,
 				32C77AB71B7922C2006BCE0D /* AncientWorldContentController.swift */,
+				32512C691B52727C00BC4ADC /* AppDelegate.swift */,
+				325C49691B6796CB00BBE25F /* AppInfoController.swift */,
+				32904CEC1B52D068006699A8 /* AquariumContentController.swift */,
+				320EE56B1B58478600201663 /* ArtefactImage.swift */,
+				32DD32491B57CCA500D97C70 /* ArtefactInfo.swift */,
+				32512C891B52733000BC4ADC /* BottomButtonContainer.swift */,
+				327DDEF41B551D2900908F64 /* BugsConentController.swift */,
+				325307201B540D8700D04297 /* ButtonType.swift */,
+				3236E6411B529E3000701D27 /* DatabaseLoader.swift */,
+				32CAC7321BA190BE003B65D1 /* DinosaursContentController.swift */,
+				32512C8F1B5273B300BC4ADC /* HomePageContentContainer.swift */,
+				32512C8D1B52738800BC4ADC /* HomeViewController.swift */,
+				32512C721B52727C00BC4ADC /* LaunchScreen.xib */,
+				32512C6D1B52727C00BC4ADC /* Main.storyboard */,
+				32DD324F1B57DA8D00D97C70 /* Modes.swift */,
+				3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */,
+				3236E62E1B529B8800701D27 /* Museum-App-iOS-Bridging-Header.h */,
+				32DAA7041B667CEC001CD0AD /* PictureMultiChoiceController.swift */,
+				32DAA7021B66712A001CD0AD /* PictureQuestionController.swift */,
+				325E8D1E1B53BF50004A727F /* QRViewController.swift */,
+				3260CDFE1B5833EA00CEA424 /* QuestionManager.swift */,
+				32DAA7061B668300001CD0AD /* QuestionResult.swift */,
+				32DD324D1B57D30000D97C70 /* QuestionType.swift */,
+				327CB7D81B62393800801547 /* SingleAnswerController.swift */,
+				32512C8B1B52736400BC4ADC /* TopButtonContainer.swift */,
+				32DD32451B57C41A00D97C70 /* TrailInfo.swift */,
+				320597ED1B55294D0034DF74 /* TrailManager.swift */,
+				3260CDFC1B582EA600CEA424 /* TrailStep.swift */,
+				32DD324B1B57D16600D97C70 /* TrailStepInfo.swift */,
+				32DD32471B57C47B00D97C70 /* TrailType.swift */,
+				32512C6B1B52727C00BC4ADC /* ViewController.swift */,
 				32C77AB91B79265C006BCE0D /* WorldCulturesContentController.swift */,
 			);
 			path = "Museum-App-iOS";
@@ -327,14 +326,19 @@
 		32512C5C1B52727C00BC4ADC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "THOMAS NEEDHAM";
 				TargetAttributes = {
 					32512C631B52727C00BC4ADC = {
 						CreatedOnToolsVersion = 6.4;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -405,6 +409,7 @@
 				32512C6C1B52727C00BC4ADC /* ViewController.swift in Sources */,
 				32DD32501B57DA8D00D97C70 /* Modes.swift in Sources */,
 				3241D0C21B6173ED00E21807 /* JLToastCenter.swift in Sources */,
+				32CAC7331BA190BE003B65D1 /* DinosaursContentController.swift in Sources */,
 				32512C8C1B52736400BC4ADC /* TopButtonContainer.swift in Sources */,
 				3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */,
 				3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */,

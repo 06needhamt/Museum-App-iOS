@@ -26,9 +26,9 @@ class TrailStep: NSObject {
     let IMAGE_COL:Int32 = 6
     
     required init(data:FMResultSet){
-        stepID = data.stringForColumnIndex(STEPID_COL).toInt()!
-        trailID = data.stringForColumnIndex(TRAILID_COL).toInt()!
-        questionType = QuestionType(rawValue: data.stringForColumnIndex(QTYPE_COL).toInt()!)!
+        stepID = Int(data.stringForColumnIndex(STEPID_COL))!
+        trailID = Int(data.stringForColumnIndex(TRAILID_COL))!
+        questionType = QuestionType(rawValue: Int(data.stringForColumnIndex(QTYPE_COL))!)!
         question = data.stringForColumnIndex(QUESTION_COL)
         answer = data.stringForColumnIndex(ANSWER_COL)
         QRCode = data.stringForColumnIndex(QRCODE_COL)

@@ -37,7 +37,7 @@ class SingleAnswerController: UIViewController {
     var skipped:Bool = false
     var trailEnded:Bool = false
     
-    required init(coder aDecoder:NSCoder){
+    required init?(coder aDecoder:NSCoder){
         super.init(coder: aDecoder)
     }
     

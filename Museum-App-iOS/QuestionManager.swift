@@ -91,7 +91,7 @@ class QuestionManager: NSObject {
     
     internal func callMultiChoice(identifier:String){ // now thats what i call a call bridge
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        multiChoiceController = (storyBoard.instantiateViewControllerWithIdentifier(identifier)) as! MultiChoiceController?
+        multiChoiceController = (storyBoard.instantiateViewControllerWithIdentifier(identifier)) as! MultiChoiceController
         if(multiChoiceController == nil){
             NSLog("Multi Choice Controller = NIL")
             return
@@ -110,7 +110,7 @@ class QuestionManager: NSObject {
     
     internal func callSingleAnswer(identifier:String){
         let storyBoard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        singleAnswerController = (storyBoard.instantiateViewControllerWithIdentifier(identifier)) as! SingleAnswerController?
+        singleAnswerController = (storyBoard.instantiateViewControllerWithIdentifier(identifier)) as! SingleAnswerController
         if(singleAnswerController == nil){
             NSLog("Single Answer Controller == NIL")
             return
@@ -128,7 +128,7 @@ class QuestionManager: NSObject {
     
     internal func callPictureQuestion(identifier:String){
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        pictureQuestionController = (storyboard.instantiateViewControllerWithIdentifier(identifier)) as! PictureQuestionController?
+        pictureQuestionController = (storyboard.instantiateViewControllerWithIdentifier(identifier)) as! PictureQuestionController
         if(pictureQuestionController == nil){
             NSLog("PictureQuestionController == NIL")
             return
@@ -147,7 +147,7 @@ class QuestionManager: NSObject {
     
     internal func callPictureMultiChoice(identifier:String){
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        pictureMultiChoiceController = (storyboard.instantiateViewControllerWithIdentifier(identifier)) as! PictureMultiChoiceController?
+        pictureMultiChoiceController = (storyboard.instantiateViewControllerWithIdentifier(identifier)) as! PictureMultiChoiceController
         if(pictureMultiChoiceController == nil){
             NSLog("pictureMultiChoiceController == NIL")
             return
