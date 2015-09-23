@@ -26,6 +26,7 @@ internal class HomeViewController : UIViewController {
     @IBOutlet weak var AncientWorldContentController: UIView!
     @IBOutlet weak var WorldCulturesContentController: UIView!
     
+    @IBOutlet weak var DinosaursContentController: UIView!
     //var containerViews:[(UIView!,String)] = [(nil,"")]
     var Topcontainers = [UIView]()
     var BottomContainers = [UIView]()
@@ -36,7 +37,7 @@ internal class HomeViewController : UIViewController {
     var lastQuestionResult:QuestionResult! = nil
     var questionResults:[QuestionResult!] = []
     
-    required internal init(coder aDecoder: NSCoder) {
+    required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     override internal func viewDidLoad() {
@@ -65,13 +66,21 @@ internal class HomeViewController : UIViewController {
         Topcontainers.append(BugsContentController)
         Topcontainers.append(AncientWorldContentController)
         Topcontainers.append(WorldCulturesContentController)
-        Topcontainers.append(UIView())
+        Topcontainers.append(DinosaursContentController)
         Topcontainers.append(UIView())
         
         BottomContainers.append(MainContentContainer)
         BottomContainers.append(MainContentContainer)
         BottomContainers.append(QRContentContainer)
+        BottomContainers.append(UIView())
+        BottomContainers.append(UIView())
+        
         InformationContainers.append(AppInfoContentController)
+        InformationContainers.append(UIView())
+        InformationContainers.append(UIView())
+        InformationContainers.append(UIView())
+        InformationContainers.append(UIView())
+        InformationContainers.append(UIView())
         
         NSLog("Home View Controller Loaded")
         TopButtonsController?.parent = self

@@ -18,7 +18,7 @@ class BugsConentController: UIViewController,UIPickerViewDataSource,UIPickerView
     @IBOutlet weak var MapImage: UIImageView!
     @IBOutlet weak var AvailableTrailPicker: UIPickerView!
     
-    required init(coder aDecoder: NSCoder){
+    required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
     
@@ -32,6 +32,10 @@ class BugsConentController: UIViewController,UIPickerViewDataSource,UIPickerView
         let Results:FMResultSet = db.queryDatabase("SELECT tra_name FROM trail") // query the database
         while(Results.next()){
             Trails.append(Results.stringForColumn("tra_name")) // add all of the trails to the data array
+        }
+        if(Trails.count == 0){
+            NSLog("No Trails Found")
+            Trails.append("No Trails Available")
         }
         NSLog("%i Trails Found" , Trails.count)
         db.closeDatabase() // close the database

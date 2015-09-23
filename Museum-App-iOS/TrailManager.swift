@@ -73,7 +73,7 @@ internal class TrailManager: NSObject {
     }
     
     internal func isArtefactInExhibit(id:Int) -> Bool{
-        var artefact:ArtefactInfo! = browseArtefactID(id)
+        let artefact:ArtefactInfo! = browseArtefactID(id)
         
         if(mode != Modes.OnTrail){
             return false
@@ -130,7 +130,7 @@ internal class TrailManager: NSObject {
             return false
         }
         
-        do{
+        repeat{
             trailSteps.append(TrailStepInfo(data: results))
             
         } while(results.next())
@@ -198,8 +198,8 @@ internal class TrailManager: NSObject {
             return false
         }
         
-        do{
-            var trail:TrailInfo = TrailInfo(data: results)
+        repeat{
+            let trail:TrailInfo = TrailInfo(data: results)
             trailList.append(trail)
         } while(results.next())
         results.close()

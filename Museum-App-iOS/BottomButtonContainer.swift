@@ -16,7 +16,7 @@ internal class BottomButtonContainer : UIViewController  {
     let BottomButtonNamesBlue:[String] = ["Trail Icon Blue", "Explorer Trail Icon Blue", "QR Icon Blue", "Map Icon Blue", "Information Icon Blue"]
     let BottomButtonNamesGreen:[String] = ["Trail Icon Green", "Explorer Trail Icon Green", "QR Icon Green", "Map Icon Green", "Information Icon Green"]
     
-    required internal init(coder aDecoder: NSCoder) {
+    required internal init?(coder aDecoder: NSCoder) {
         //parent = HomeViewController(coder: aDecoder)
         super.init(coder: aDecoder);
     }
@@ -41,7 +41,7 @@ internal class BottomButtonContainer : UIViewController  {
         let Viewwidth: CGFloat = self.view.bounds.width // get the width of the screen
         let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 8) // get the height of the screen and divide it by 8 because the buttons use an eighth of the screen
         let i:Int = Int(index); // convert index to an int
-        var button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight)) // create the button with a size and location
+        let button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight)) // create the button with a size and location
         let image:UIImage? = UIImage(named: BottomButtonNamesBlue[i]) // load the image from the assets
         if(image == nil){
             NSLog("Image is NIL")

@@ -40,7 +40,7 @@ class MultiChoiceController: UIViewController {
     
     @IBOutlet weak var BackgroundImage: UIImageView!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         //fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
     }
@@ -225,7 +225,7 @@ class MultiChoiceController: UIViewController {
     }
     
     private func applyAnswers(tempy:String){
-        var templist:[String] = tempy.componentsSeparatedByString(",")
+        let templist:[String] = tempy.componentsSeparatedByString(",")
         answers = templist
         correctAnswer = answers[0]
         while(answers.count < 4){

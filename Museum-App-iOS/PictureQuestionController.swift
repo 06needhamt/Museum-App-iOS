@@ -117,7 +117,7 @@ class PictureQuestionController: UIViewController {
         self.manager = manager
     }
     
-    func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
+    func imageResize (image image:UIImage, sizeChange:CGSize)-> UIImage{
         
         let hasAlpha = true
         let scale: CGFloat = 0.0 // Use scale factor of main screen
