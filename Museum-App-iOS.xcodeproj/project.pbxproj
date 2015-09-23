@@ -14,7 +14,6 @@
 		3236E63C1B529B8900701D27 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6341B529B8900701D27 /* FMDatabasePool.m */; };
 		3236E63D1B529B8900701D27 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6361B529B8900701D27 /* FMDatabaseQueue.m */; };
 		3236E63E1B529B8900701D27 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6391B529B8900701D27 /* FMResultSet.m */; };
-		3236E6401B529D2F00701D27 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3236E63F1B529D2F00701D27 /* libsqlite3.0.dylib */; };
 		3236E6421B529E3000701D27 /* DatabaseLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6411B529E3000701D27 /* DatabaseLoader.swift */; };
 		3236E6441B529EBD00701D27 /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236E6431B529EBD00701D27 /* FMDatabaseVariadic.swift */; };
 		3236E64D1B52A27B00701D27 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 3236E6481B52A27B00701D27 /* images */; };
@@ -44,6 +43,7 @@
 		327DDEF51B551D2900908F64 /* BugsConentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327DDEF41B551D2900908F64 /* BugsConentController.swift */; };
 		3285A3B11B5EB75300D18193 /* MultiChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */; };
 		32904CED1B52D068006699A8 /* AquariumContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32904CEC1B52D068006699A8 /* AquariumContentController.swift */; };
+		329CC1A51BAD772800AC5F5F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 329CC1A41BAD772800AC5F5F /* libsqlite3.0.tbd */; };
 		32C77AB81B7922C2006BCE0D /* AncientWorldContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C77AB71B7922C2006BCE0D /* AncientWorldContentController.swift */; };
 		32C77ABA1B79265C006BCE0D /* WorldCulturesContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C77AB91B79265C006BCE0D /* WorldCulturesContentController.swift */; };
 		32CAC7331BA190BE003B65D1 /* DinosaursContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CAC7321BA190BE003B65D1 /* DinosaursContentController.swift */; };
@@ -118,6 +118,7 @@
 		327DDEF41B551D2900908F64 /* BugsConentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsConentController.swift; sourceTree = "<group>"; };
 		3285A3B01B5EB75300D18193 /* MultiChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiChoiceController.swift; sourceTree = "<group>"; };
 		32904CEC1B52D068006699A8 /* AquariumContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AquariumContentController.swift; sourceTree = "<group>"; };
+		329CC1A41BAD772800AC5F5F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		32C77AB71B7922C2006BCE0D /* AncientWorldContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncientWorldContentController.swift; sourceTree = "<group>"; };
 		32C77AB91B79265C006BCE0D /* WorldCulturesContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldCulturesContentController.swift; sourceTree = "<group>"; };
 		32CAC7321BA190BE003B65D1 /* DinosaursContentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DinosaursContentController.swift; sourceTree = "<group>"; };
@@ -137,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3236E6401B529D2F00701D27 /* libsqlite3.0.dylib in Frameworks */,
+				329CC1A51BAD772800AC5F5F /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +197,7 @@
 		32512C5B1B52727C00BC4ADC = {
 			isa = PBXGroup;
 			children = (
+				329CC1A41BAD772800AC5F5F /* libsqlite3.0.tbd */,
 				3236E63F1B529D2F00701D27 /* libsqlite3.0.dylib */,
 				32512C661B52727C00BC4ADC /* Museum-App-iOS */,
 				32512C7C1B52727D00BC4ADC /* Museum-App-iOSTests */,

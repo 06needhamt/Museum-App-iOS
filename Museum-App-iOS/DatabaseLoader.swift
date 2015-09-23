@@ -15,21 +15,15 @@ import UIKit
 internal class DatabaseLoader: NSObject {
 
     var resourcesFolder:NSURL
-    var path:String
+    //var path:String
     var database:FMDatabase!
     
     internal override init(){
         //resourcesFolder = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
-        do{
-                self.resourcesFolder = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("museumDB", ofType: "")!)
-                self.path = try String(contentsOfURL: self.resourcesFolder)
-                self.database = FMDatabase(path: self.path)
-        }
-        catch let error as NSError{
-            NSLog("%@", error.description)
-            self.path = "ERROR"
-            self.database = nil
-        }
+        self.resourcesFolder = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("museumDB", ofType: "")!)
+        //self.path = resourcesFolder
+        self.database = FMDatabase(path: self.resourcesFolder.absoluteString)
+        
         super.init()
     }
   
