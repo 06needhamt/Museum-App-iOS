@@ -46,7 +46,7 @@ class DinosaursContentController: UIViewController,UIPickerViewDataSource,UIPick
         return Trails.count // get the number of items in the spinner
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         NSLog("You Selected %@", Trails[row])
         return Trails[row] // get the selected item from the spinner
     }

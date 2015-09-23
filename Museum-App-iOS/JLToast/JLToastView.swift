@@ -80,7 +80,7 @@ public let JLToastViewLandscapeOffsetYAttributeName = "JLToastViewLandscapeOffse
     
     func updateView() {
         let deviceWidth = CGRectGetWidth(UIScreen.mainScreen().bounds)
-        let font = self.textLabel.font
+        //let font = self.textLabel.font
         let constraintSize = CGSize(width: deviceWidth * (280.0 / 320.0), height: CGFloat.max)
         let textLabelSize = self.textLabel.sizeThatFits(constraintSize)
         self.textLabel.frame = CGRect(

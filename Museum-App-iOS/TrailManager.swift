@@ -117,7 +117,7 @@ internal class TrailManager: NSObject {
     }
     internal func getTrailSteps(id:Int) -> Bool{
         var results:FMResultSet!
-        var resultString:String
+        //var resultString:String
         
         trailSteps = []
         
@@ -139,7 +139,7 @@ internal class TrailManager: NSObject {
         return true
     }
     internal func getTrail(id:Int) -> Bool{
-        var trail:TrailInfo! = nil
+        //var trail:TrailInfo! = nil
         
         let queryString:String = "SELECT _id AS tra_trailID FROM trail WHERE tra_trailID = " + String(id)
         
@@ -187,7 +187,7 @@ internal class TrailManager: NSObject {
     internal func getDatabaseTrails(query:String) -> Bool{
         //var database:DatabaseLoader
         var results:FMResultSet!
-        var resultString:String
+        //var resultString:String
         
         trailList = []
         //database = DatabaseLoader()

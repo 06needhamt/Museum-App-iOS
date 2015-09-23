@@ -54,7 +54,7 @@ internal class TopButtonContainer : UIViewController {
         let Viewwidth: CGFloat = self.view.bounds.width // get the width of the screen
         let Viewheight: CGFloat = CGFloat(self.view.bounds.height / 7.25) // get the height of the screen and divide it by eight because the buttons take up an eighth of the screen
         let i:Int = Int(index) // convert index to an int
-        var value:String = TopButtonImageNamesBlue[i]
+        //var value:String = TopButtonImageNamesBlue[i]
         let button = UIButton(frame: CGRect(x: Viewwidth / NUM_BUTTONS * index, y:CGFloat(0.0), width: Viewwidth / NUM_BUTTONS, height: Viewheight)) // create the button with a size and location
         let image:UIImage? = (UIImage(named: TopButtonImageNamesBlue[i])) // load the image from assets
         if(image == nil){
