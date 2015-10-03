@@ -32,7 +32,7 @@ class DinosaursContentController: UIViewController,UIPickerViewDataSource,UIPick
         }
         NSLog("%i Trails Found" , Trails.count)
         db.closeDatabase() // close the database
-        NSLog("Aquarium Content Controller Loaded")
+        NSLog("Dinosaurs Content Controller Loaded")
     }
     
     override func didReceiveMemoryWarning() {

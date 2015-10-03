@@ -31,7 +31,7 @@ class AncientWorldContentController: UIViewController,UIPickerViewDataSource,UIP
         }
         NSLog("%i Trails Found" , Trails.count)
         db.closeDatabase() // close the database
-        NSLog("Bugs Content Controller Loaded")
+        NSLog("Ancient World Controller Loaded")
     }
     
     override func didReceiveMemoryWarning() {

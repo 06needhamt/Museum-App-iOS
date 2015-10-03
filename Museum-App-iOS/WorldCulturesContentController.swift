@@ -35,7 +35,7 @@ class WorldCulturesContentController: UIViewController,UIPickerViewDelegate,UIPi
         }
         NSLog("%i Trails Found" , Trails.count)
         db.closeDatabase() // close the database
-        NSLog("Aquarium Content Controller Loaded")
+        NSLog("World Cultures Content Controller Loaded")
     }
     
     override func didReceiveMemoryWarning() {

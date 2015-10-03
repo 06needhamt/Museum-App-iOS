@@ -34,7 +34,7 @@ internal class DatabaseLoader: NSObject {
             return false
         }
         else{
-            NSLog("Database Opened Successfully YAY")
+            //NSLog("Database Opened Successfully YAY")
             //NSLog("DB Path %@", self.getDatabasePath())
             return true
         }
@@ -48,7 +48,7 @@ internal class DatabaseLoader: NSObject {
             return false
         }
         else{
-            NSLog("Database Closed Successfully YAY")
+            //NSLog("Database Closed Successfully YAY")
             return true
         }
     }
@@ -60,7 +60,7 @@ internal class DatabaseLoader: NSObject {
             return nil
         }
         else{
-            NSLog("Database opened for queries")
+            //NSLog("Database opened for queries")
             // try to begin a transaction with the database
             if(!database.beginTransaction()){
                 NSLog("Could not begin a database transaction")
@@ -68,7 +68,7 @@ internal class DatabaseLoader: NSObject {
             }
             else{
                 // try to query the database
-                NSLog("Database transaction started succesfully")
+                //NSLog("Database transaction started succesfully")
                 let results = database.executeQuery(query)
                 if(results == nil){
                 NSLog("Query Failed")
@@ -76,7 +76,7 @@ internal class DatabaseLoader: NSObject {
                 }
                 else{
                     // if the query was successful return the results
-                    NSLog("Query Successful")
+                    //NSLog("Query Successful")
                     return results
                 }
             }
